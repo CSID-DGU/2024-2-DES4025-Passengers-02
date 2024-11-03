@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 선택</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/selectMenu.css">
+</head>
+<body>
+    <div class="menu-container">
+        <div class="header">
+            <button class="back-btn">&larr;</button>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <span class="page-count">1/6</span>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-category="coffee">커피</button>
+            <button class="tab" data-category="tea">차</button>
+            <button class="tab" data-category="drink">음료</button>
+            <button class="tab" data-category="food">푸드</button>
+            <button class="tab" data-category="md">상품</button>
+
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+
+        <button class="complete-btn">선택 완료</button>
+    </div>
+    <script src="../js/common.js"></script>
+    <script src="../js/selectMenu.js"></script>
+</body>
+</html>
