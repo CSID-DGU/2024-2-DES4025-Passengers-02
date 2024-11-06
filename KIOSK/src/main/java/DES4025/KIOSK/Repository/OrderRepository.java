@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface OrderRepository extends JpaRepository<dOrder, Integer> {
+
     @Query(value = "update dOrder set take_out_mode = :take_out_mode where order_num = :order_num", nativeQuery = true)
     @Modifying
     @Transactional
