@@ -1,27 +1,27 @@
 package DES4025.KIOSK.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "`Order`")
-public class Order {
+@Table(name = "dOrder")
+public class dOrder {
     @Id
-    @Column(name = "order_num", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_num")
     private Integer orderNum;
 
     @Column(name = "take_out_mode")
     private Boolean takeOutMode;
 
     @Column(name = "order_date")
+    @CreationTimestamp
     private Instant orderDate;
 
     @Column(name = "price")
