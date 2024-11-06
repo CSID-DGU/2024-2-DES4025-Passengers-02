@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "menu")
 public class Menu {
     @Id
     @Column(name = "menu_num", nullable = false)
