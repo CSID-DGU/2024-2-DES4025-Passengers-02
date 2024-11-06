@@ -12,8 +12,8 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "`Order`")
-public class Order {
+@Table(name = "dOrder")
+public class dOrder {
     @Id
     @Column(name = "order_num", nullable = false)
     private Integer orderNum;
