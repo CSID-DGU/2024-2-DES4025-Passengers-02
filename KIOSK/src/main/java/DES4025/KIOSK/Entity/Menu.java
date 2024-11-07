@@ -23,9 +23,8 @@ public class Menu {
     @Column(name = "best")
     private Boolean best;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @Column(name = "category_id")
+    private Integer categoryId;
 
     @Column(name = "can_temp")
     private Boolean canTemp;

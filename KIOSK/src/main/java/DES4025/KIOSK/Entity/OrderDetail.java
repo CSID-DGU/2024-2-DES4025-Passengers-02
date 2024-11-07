@@ -7,19 +7,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "order_details")
+@Table(name = "OrderDetails")
 public class OrderDetail {
     @Id
     @Column(name = "order_detail_num", nullable = false)
     private Integer orderDetailNum;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_num")
-    private dOrder orderNum;
+    @Column(name = "order_num")
+    private Integer orderNum;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "menu_num")
-    private Menu menuNum;
+    @Column(name = "menu_num")
+    private Integer menuNum;
 
     @Column(name = "menu_amount")
     private Integer menuAmount;

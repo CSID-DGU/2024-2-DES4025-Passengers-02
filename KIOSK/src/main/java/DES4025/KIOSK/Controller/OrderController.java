@@ -35,7 +35,7 @@ public class OrderController {
     }
 
     @PutMapping("/{order-num}/home")
-    public ResponseEntity<Map<String, String>> takeOutMode(@PathVariable("order-num") Integer order_num, @RequestParam boolean takeOutMode) {
+    public ResponseEntity<Map<String, String>> takeOutMode(@PathVariable("order-num") Integer order_num, @RequestBody boolean takeOutMode) {
         Map<String, String> response = new HashMap<>();
 
         try {
