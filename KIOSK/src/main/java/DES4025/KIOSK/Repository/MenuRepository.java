@@ -6,5 +6,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
+    Optional<Menu> findByMenuName(String menuName);
 }

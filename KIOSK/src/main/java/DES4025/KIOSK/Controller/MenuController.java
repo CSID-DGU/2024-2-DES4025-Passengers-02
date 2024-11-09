@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ public class MenuController {
 
     private final MenuService menuService; //서비스 객체 넣기
 
+    //카테고리 선택
     @PostMapping("/{order-num}/category")
     public ResponseEntity<Map<String, String>> setCategory(@PathVariable("order-num") Integer orderNum,
                                                            @RequestBody MenuDTO menuDTO) {
@@ -29,6 +31,31 @@ public class MenuController {
             response.put("code", "SU");
             response.put("message", "Success.");
             response.put("categoryId", categoryId.toString());
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("code", "DE");
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
+    //메뉴선택후 가격 response
+    @PostMapping("/{order-num}/menu-select")
+    public ResponseEntity<Map<String, Object>> selectMenu(@PathVariable("order-num") Integer orderNum,
+                                                          @RequestBody MenuDTO menuDTO) {
+        Map<String, Object> response = new LinkedHashMap<>();
+
+        try {
+            String menuName = menuDTO.getMenuName(); //얘는 리퀘스트로 받아온 데이터 (=DTO)
+            Integer price = menuService.getPriceByMenuName(menuName); //얘는 db에서 가져올 데이터(서비스-리포지토리 이용)
+
+            Map<String, Object> selectedMenu = new LinkedHashMap<>();
+            selectedMenu.put("menu_name", menuName);
+            selectedMenu.put("price", price);
+
+            response.put("code", "SU");
+            response.put("message", "Success.");
+            response.put("selectedMenu", selectedMenu);
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("code", "DE");
