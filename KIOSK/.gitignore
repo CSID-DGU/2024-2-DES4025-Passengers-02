@@ -21,6 +21,7 @@ bin/
 application.properties
 application-security.properties
 .idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -37,3 +38,4 @@ out/
 
 ### VS Code ###
 .vscode/
+!/.idea/
