@@ -18,4 +18,11 @@ public class MenuService {
         // 메뉴가 존재하면 가격 반환, 아니면 null 반환
         return menu.map(Menu::getPrice).orElse(null);
     }
+    public Integer getMenuNumByMenuName(String menuName) {
+        Optional<Menu> menu = menuRepository.findByMenuName(menuName); // 메뉴 이름으로 메뉴 검색
+
+        // 메뉴가 존재하면 가격 반환, 아니면 null 반환
+        return menu.map(Menu::getMenuNum).orElse(null);
+
+    }
 }

@@ -3,6 +3,7 @@ package DES4025.KIOSK.Controller;
 import DES4025.KIOSK.DTO.MenuDTO;
 import DES4025.KIOSK.Entity.Menu;
 import DES4025.KIOSK.Service.MenuService;
+import DES4025.KIOSK.Service.OrderDetailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ import java.util.Optional;
 public class MenuController {
 
     private final MenuService menuService; //서비스 객체 넣기
-
+    private final OrderDetailService orderDetailService;
     //카테고리 선택
     @PostMapping("/{order-num}/category")
     public ResponseEntity<Map<String, String>> setCategory(@PathVariable("order-num") Integer orderNum,
@@ -46,8 +47,12 @@ public class MenuController {
         Map<String, Object> response = new LinkedHashMap<>();
 
         try {
+            //데이터 가져오기
             String menuName = menuDTO.getMenuName(); //얘는 리퀘스트로 받아온 데이터 (=DTO)
             Integer price = menuService.getPriceByMenuName(menuName); //얘는 db에서 가져올 데이터(서비스-리포지토리 이용)
+            Integer menuNum = menuService.getMenuNumByMenuName(menuName);
+            //선택한 메뉴 db에 저장하기
+            orderDetailService.saveOrderDetail(orderNum, menuNum);
 
             Map<String, Object> selectedMenu = new LinkedHashMap<>();
             selectedMenu.put("menu_name", menuName);
