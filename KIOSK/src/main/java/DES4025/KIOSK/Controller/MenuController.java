@@ -1,7 +1,7 @@
 package DES4025.KIOSK.Controller;
 
 import DES4025.KIOSK.DTO.MenuDTO;
-import DES4025.KIOSK.Entity.Menu;
+import DES4025.KIOSK.DTO.OrderDetailDTO;
 import DES4025.KIOSK.Service.MenuService;
 import DES4025.KIOSK.Service.OrderDetailService;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -52,7 +51,7 @@ public class MenuController {
             Integer price = menuService.getPriceByMenuName(menuName); //얘는 db에서 가져올 데이터(서비스-리포지토리 이용)
             Integer menuNum = menuService.getMenuNumByMenuName(menuName);
             //선택한 메뉴 db에 저장하기
-            orderDetailService.saveOrderDetail(orderNum, menuNum);
+            orderDetailService.saveMenuNumOrderNum(orderNum, menuNum);
 
             Map<String, Object> selectedMenu = new LinkedHashMap<>();
             selectedMenu.put("menu_name", menuName);
@@ -61,6 +60,29 @@ public class MenuController {
             response.put("code", "SU");
             response.put("message", "Success.");
             response.put("selectedMenu", selectedMenu);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("code", "DE");
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
+    //온도선택기능
+    @PutMapping("/{order-num}/menu-select/temp")
+    public ResponseEntity<Map<String, Object>> selectTemp(@PathVariable("order-num") Integer orderNum,
+                                                          @RequestBody OrderDetailDTO orderDetailDTO) {
+        Map<String, Object> response = new LinkedHashMap<>();
+
+        try {
+            //DTO로 리퀘스트한 데이터 가져오기
+            Boolean iceHot = orderDetailDTO.getMenuTemp();
+            Integer menuNum = orderDetailDTO.getMenuNum();
+            //선택한 메뉴 db에 저장하기
+            orderDetailService.saveMenuTemp(orderNum, menuNum, iceHot);
+
+            response.put("code", "SU");
+            response.put("message", "Success.");
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             response.put("code", "DE");

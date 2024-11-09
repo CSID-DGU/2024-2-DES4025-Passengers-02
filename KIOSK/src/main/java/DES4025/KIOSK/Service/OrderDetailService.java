@@ -6,17 +6,32 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class OrderDetailService {
     private final OrderDetailRepository orderDetailRepository;
-    public void saveOrderDetail(Integer orderNum, Integer menuNum){
+    public void saveMenuNumOrderNum(Integer orderNum, Integer menuNum){
         OrderDetail orderDetail = new OrderDetail();
         orderDetail.setOrderNum(orderNum);  // 주문 번호
         orderDetail.setMenuNum(menuNum);  // 메뉴 번호
 
         // orderdetail 테이블에 저장
         orderDetailRepository.save(orderDetail);
+    }
+    public void saveMenuTemp(Integer orderNum, Integer menuNum, Boolean iceHot) {
+        Optional<OrderDetail> optionalOrderDetail = orderDetailRepository.findByOrderNumAndMenuNum(orderNum, menuNum);
+        if (optionalOrderDetail.isPresent()) {
+            OrderDetail orderDetail = optionalOrderDetail.get();
+            orderDetail.setMenuTemp(iceHot);  // 메뉴 온도 db에 올리고
+            orderDetailRepository.save(orderDetail); //저장
+        } else {
+            // 해당 조건의 OrderDetail이 없는 경우 예외 처리
+            throw new NoSuchElementException("OrderDetail with orderNum " + orderNum + " and menuNum " + menuNum + "db에 없음");
+        }
+
     }
 }
