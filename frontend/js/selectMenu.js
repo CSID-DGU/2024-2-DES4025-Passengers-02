@@ -90,7 +90,7 @@ loadMenuItems('coffee');
 
 
 document.querySelector('.complete-btn').addEventListener('click', function() {
-    console.log("선택 완료 버튼 클릭");
+    window.location.href = "shoppingCart.html"; 
     // 선택 완료 시의 동작 로직 추가 (예: 다음 페이지로 이동)
 });
 //
