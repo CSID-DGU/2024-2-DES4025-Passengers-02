@@ -19,7 +19,14 @@ const menuData = {
         { name: '페퍼민트', img: '../assets/images/menu/peppermint.png' }
     ],
     drink: [
-        
+        {name: '골드망고스무디', img: '../assets/images/menu/mangosmoothie.png'},
+        {name: '딸기주스', img: '../assets/images/menu/strawberryjuice.png'},
+        {name: '녹차프라페', img: '../assets/images/menu/greenteafrappe.png'},
+        {name: '라임모히또', img: '../assets/images/menu/limemojitto.png'},
+        {name: '체리콕', img: '../assets/images/menu/cherrycoke.png'},
+        {name: '유니콘프라페', img: '../assets/images/menu/unicornfrappe.png'},
+        {name: '민트프라페', img: '../assets/images/menu/mintfrappe.png'},
+        {name: '딸기퐁크러쉬', img: '../assets/images/menu/strawberrycrush.png'},
     ],
 
     food : [
@@ -87,3 +94,12 @@ document.querySelector('.complete-btn').addEventListener('click', function() {
     // 선택 완료 시의 동작 로직 추가 (예: 다음 페이지로 이동)
 });
 //
+
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const menuItemName = this.querySelector('p').textContent; // 메뉴 이름 가져오기
+        localStorage.setItem('selectedMenuItem', menuItemName); // localStorage에 저장
+        window.location.href = "askTemperature.html"; // 온도 선택 화면으로 이동
+    });
+});
+

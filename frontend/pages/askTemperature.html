@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온도 선택</title>
+    <link rel="stylesheet" href="../css/askTemperature.css">
+</head>
+<body>
+    <div class="header">
+        <button class="back-btn">&larr;</button>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <span class="page-count">4/6</span>
+    </div>
+    <div class="container">
+        <h2 id="menuItemName"></h2> <!-- 메뉴 이름을 동적으로 설정 -->
+        <h1>온도 선택</h1>
+        <div class="options">
+            <div class="option" id="hot">
+                <img src="../assets/images/Hot.png" alt="뜨거운 아이콘" class="icon">
+                <p>따뜻한</p>
+            </div>
+            <div class="option" id="cold">
+                <img src="../assets/images/Cold.png" alt="차가운 아이콘" class="icon">
+                <p>차가운</p>
+            </div>
+        </div>
+        <button class="complete-btn">선택 완료</button>
+    </div>
+    <script src="../js/askTemperature.js"></script>
+</body>
+</html>
