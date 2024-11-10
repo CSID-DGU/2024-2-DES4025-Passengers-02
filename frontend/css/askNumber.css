@@ -94,7 +94,7 @@ h1 {
 }
 
 /* 선택 완료 버튼 스타일 */
-.complete-btn {
+#complete-btn {
     width: 100%;
     padding: 15px;
     font-size: 18px;
@@ -106,7 +106,7 @@ h1 {
     transition: background-color 0.3s;
 }
 
-.complete-btn:hover {
+#complete-btn:hover {
     background-color: #333;
 }
 
@@ -121,7 +121,7 @@ h1 {
         padding: 0.5em;
     }
 
-    .complete-btn {
+    #complete-btn {
         font-size: 16px;
         padding: 12px;
     }
@@ -222,7 +222,7 @@ h1 {
 }
 
 /* 선택 완료 버튼 스타일 */
-.complete-btn {
+#complete-btn {
     width: 100%;
     padding: 15px;
     font-size: 18px;
@@ -234,7 +234,7 @@ h1 {
     transition: background-color 0.3s;
 }
 
-.complete-btn:hover {
+#complete-btn:hover {
     background-color: #333;
 }
 
