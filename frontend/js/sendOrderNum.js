@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 서버에서 주문 번호를 가져온다고 가정
     // 여기서는 예시로 임의의 주문 번호를 설정
-    const orderNumber = 0;
+    const orderNumber = localStorage.getItem('order_num'); // 예제용 주문번호, 서버로부터 가져올 수도 있음
 
     // 주문 번호를 HTML에 업데이트
     orderNumberElement.textContent = orderNumber;
