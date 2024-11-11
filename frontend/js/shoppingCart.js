@@ -145,3 +145,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 });
+
+
+
+document.querySelector('.order-btn').addEventListener('click', function() {
+    console.log("주문하기 버튼 클릭");
+
+    // 주문 상세 및 총 주문 금액 계산
+    const orderDetail = JSON.stringify(cart);
+    const total_price = cart.reduce((total, item) => {
+        return total + (item.quantity * item.price);
+    }, 0);
+
+    // 서버로 주문 정보 전송 (백엔드 API로 POST 요청)
+    fetch('https://example.com/order-number', { // 실제 백엔드 API URL로 변경해야 합니다.
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            orderDetail: orderDetail,
+            total_price: total_price
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('서버 요청에 실패했습니다.');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.code === "SU") {
+            alert("주문 번호가 성공적으로 전송되었습니다.");
+            localStorage.removeItem('Menu'); // 로컬스토리지의 장바구니 초기화
+            window.location.href = "notifyOrderNum.html"; // 주문 번호 확인 페이지로 이동
+        } else {
+            alert(`에러: ${data.message}`);
+        }
+    })
+    .catch(error => {
+        console.error("에러 발생:", error);
+        alert("주문 전송 중 오류가 발생했습니다. 다시 시도해주세요.");
+    });
+});
