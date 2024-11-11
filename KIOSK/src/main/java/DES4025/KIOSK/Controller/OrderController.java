@@ -1,6 +1,7 @@
 package DES4025.KIOSK.Controller;
 
 import DES4025.KIOSK.DTO.orderDTO;
+import DES4025.KIOSK.DTO.takeOutDTO;
 import DES4025.KIOSK.Service.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,11 +19,11 @@ public class OrderController {
     private final OrderService orderService;
 
     @PutMapping("/home")
-    public ResponseEntity<Map<String, String>> takeOutMode(@RequestBody boolean takeOutMode) {
+    public ResponseEntity<Map<String, String>> takeOutMode(@RequestBody takeOutDTO takeOutMode) {
         Map<String, String> response = new LinkedHashMap<>();
 
         try {
-            int order_num = orderService.saveTakeOutMode(takeOutMode);
+            int order_num = orderService.saveTakeOutMode(takeOutMode.isTakeOutMode());
             response.put("code", "SU");
             response.put("message", "Success.");
             response.put("order_num", String.valueOf(order_num));
