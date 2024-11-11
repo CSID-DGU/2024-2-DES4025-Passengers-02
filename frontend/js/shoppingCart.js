@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             total_price: total_price                   // 총 가격
         };
 
-        fetch(`http://localhost:8080/${orderNum}`, {  // 실제 백엔드 API URL로 변경 필요
+        fetch(`http://211.188.49.69:8080/${orderNum}`, {  // 실제 백엔드 API URL로 변경 필요
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
