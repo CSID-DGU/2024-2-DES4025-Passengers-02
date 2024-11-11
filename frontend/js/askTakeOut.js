@@ -12,7 +12,7 @@ document.getElementById('takeout').addEventListener('click', function() {
 
 // 서버에 takeoutMode 전송하는 함수
 function sendTakeoutMode(takeoutMode) {
-    fetch('http://localhost:8080/home', {  // 실제 백엔드 API URL로 변경 필요
+    fetch('http://211.188.49.69:8080/home', {  // 실제 백엔드 API URL로 변경 필요
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
