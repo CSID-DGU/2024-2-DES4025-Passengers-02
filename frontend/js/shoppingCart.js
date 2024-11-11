@@ -33,6 +33,8 @@ const menuData = {
     md: []
 };
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const cartItemsElement = document.getElementById('cartItems');
     let cart = JSON.parse(localStorage.getItem('Menu')) || [];
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // menuData에서 이미지 경로와 가격 찾기
         let itemImageSrc = '';
         let itemPrice = 0;
-        for (const category in menuData) {
+        for (const category in menuData) {  // 여기서 Menu 대신 menuData 사용
             const menuItem = menuData[category].find(menu => menu.name === item.menuItem);
             if (menuItem) {
                 itemImageSrc = menuItem.img;
@@ -138,10 +140,72 @@ document.addEventListener('DOMContentLoaded', function() {
         cartItemsElement.appendChild(cartItem);
     });
 
+    // 주문하기 버튼 클릭 시 POST 요청 보내기
     document.querySelector('.order-btn').addEventListener('click', function() {
         console.log("주문하기 버튼 클릭");
-        localStorage.removeItem('Menu'); // 다른 곳으로 
-        window.location.href = "notifyOrderNum.html"; 
 
+        // total_price 계산
+        let total_price = 0;
+        const orderDetail = cart.map(item => {
+            let itemPrice = 0;
+            for (const category in menuData) { 
+                const menuItem = menuData[category].find(menu => menu.name === item.menuItem);
+                if (menuItem) {
+                    itemPrice = menuItem.price;
+                    break;
+                }
+            }
+            total_price += itemPrice * item.quantity;
+
+            return {
+                name: item.menuItem,
+                quantity: item.quantity,
+                price: itemPrice,
+                temperature: item.temperature,
+                option: item.option
+            };
+        });
+
+        // 주문 번호 가져오기 (예: 로컬 스토리지에서)
+        const orderNum = localStorage.getItem('order_num');
+        if (!orderNum) {
+            alert('주문 번호가 설정되지 않았습니다.');
+            return;
+        }
+
+        // POST 요청 보내기
+        const orderData = {
+            orderDetail: JSON.stringify(orderDetail),  // 주문 상세 내용
+            total_price: total_price                   // 총 가격
+        };
+
+        fetch(`http://211.188.49.69:8080/${orderNum}`, {  // 실제 백엔드 API URL로 변경 필요
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('서버 요청에 실패했습니다.');
+            }
+            return response.json();  // 응답 본문을 JSON으로 변환
+        })
+        .then(data => {
+            console.log("Response data:", data); // 응답 데이터 출력
+            if (data.code === "SU") {
+                console.log("주문 성공");
+                localStorage.removeItem('Menu'); // 장바구니 초기화
+                window.location.href = "notifyOrderNum.html"; // 주문 확인 페이지로 이동
+            } else {
+                console.error(`에러: ${data.message}`);
+                alert("주문 처리 중 오류가 발생했습니다. 다시 시도해주세요.");
+            }
+        })
+        .catch(error => {
+            console.error("에러 발생:", error);
+            alert("주문 처리 중 오류가 발생했습니다. 다시 시도해주세요.");
+        });
     });
 });
