@@ -1,16 +1,15 @@
 package DES4025.KIOSK.Controller;
 
+import DES4025.KIOSK.DTO.orderDTO;
 import DES4025.KIOSK.Service.OrderService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @Slf4j
@@ -18,11 +17,12 @@ import java.util.Optional;
 public class OrderController {
     private final OrderService orderService;
 
-    @GetMapping("/kiosk/mode")
-    public ResponseEntity<Map<String, String>> setOrderNum() {
-        Map<String, String> response = new HashMap<>();
+    @PutMapping("/home")
+    public ResponseEntity<Map<String, String>> takeOutMode(@RequestBody boolean takeOutMode) {
+        Map<String, String> response = new LinkedHashMap<>();
+
         try {
-            Integer order_num = orderService.setOrderNum();
+            int order_num = orderService.saveTakeOutMode(takeOutMode);
             response.put("code", "SU");
             response.put("message", "Success.");
             response.put("order_num", String.valueOf(order_num));
@@ -34,22 +34,19 @@ public class OrderController {
         }
     }
 
-    @PutMapping("/{order-num}/home")
-    public ResponseEntity<Map<String, String>> takeOutMode(@PathVariable("order-num") Integer order_num, @RequestBody boolean takeOutMode) {
-        Map<String, String> response = new HashMap<>();
+    @PostMapping("/{order-num}")
+    public ResponseEntity<?> getOrderNum(@PathVariable("order-num") Integer order_num, @RequestBody orderDTO orderdto) {
+        Map<String, Object> response = new LinkedHashMap<>();
 
         try {
-            orderService.saveTakeOutMode(order_num, takeOutMode);
+            orderService.setMenu(order_num, orderdto.getOrderDetail(), orderdto.getTotal_price());
             response.put("code", "SU");
             response.put("message", "Success.");
-            response.put("order_num", String.valueOf(order_num));
-            return ResponseEntity.ok(response);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
         } catch (Exception e) {
-            response.put("code", "DE");
+            response.put("code", "Error");
             response.put("message", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
-
-
 }

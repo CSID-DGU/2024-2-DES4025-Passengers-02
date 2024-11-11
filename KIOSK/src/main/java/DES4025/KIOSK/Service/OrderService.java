@@ -13,12 +13,14 @@ import org.springframework.stereotype.Service;
 public class OrderService {
     private final OrderRepository orderRepository;
 
-    public Integer setOrderNum() {
-        dOrder saved = orderRepository.save(new dOrder());
-        return saved.getOrderNum();
+    public int saveTakeOutMode(boolean takeOutMode) {
+        dOrder dorder = new dOrder();
+        dorder.setTakeOutMode(takeOutMode);
+        dOrder savedOrder = orderRepository.save(dorder);
+        return savedOrder.getOrderNum();
     }
 
-    public void saveTakeOutMode(Integer order_num, boolean takeOutMode) {
-        orderRepository.updateTakeOutMode(order_num, takeOutMode);
+    public void setMenu(Integer order_num, String menu, int total_price) {
+        orderRepository.setMenu(order_num, menu, total_price);
     }
 }
