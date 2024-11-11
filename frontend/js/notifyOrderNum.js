@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 예를 들어, 주문번호를 동적으로 설정할 경우 사용할 수 있습니다.
     const orderNumberElement = document.getElementById('orderNumber');
-    const orderNumber = 243; // 예제용 주문번호, 서버로부터 가져올 수도 있음
+    const orderNumber = localStorage.getItem('order_num'); // 예제용 주문번호, 서버로부터 가져올 수도 있음
 
     orderNumberElement.textContent = orderNumber;
 
