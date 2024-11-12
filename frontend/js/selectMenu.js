@@ -19,48 +19,51 @@ const menuData = {
         { name: '페퍼민트', img: '../assets/images/menu/peppermint.png' }
     ],
     drink: [
-        {name: '골드망고스무디', img: '../assets/images/menu/mangosmoothie.png'},
-        {name: '딸기주스', img: '../assets/images/menu/strawberryjuice.png'},
-        {name: '녹차프라페', img: '../assets/images/menu/greenteafrappe.png'},
-        {name: '라임모히또', img: '../assets/images/menu/limemojitto.png'},
-        {name: '체리콕', img: '../assets/images/menu/cherrycoke.png'},
-        {name: '유니콘프라페', img: '../assets/images/menu/unicornfrappe.png'},
-        {name: '민트프라페', img: '../assets/images/menu/mintfrappe.png'},
-        {name: '딸기퐁크러쉬', img: '../assets/images/menu/strawberrycrush.png'},
+        { name: '골드망고스무디', img: '../assets/images/menu/mangosmoothie.png' },
+        { name: '딸기주스', img: '../assets/images/menu/strawberryjuice.png' },
+        { name: '녹차프라페', img: '../assets/images/menu/greenteafrappe.png' },
+        { name: '라임모히또', img: '../assets/images/menu/limemojitto.png' },
+        { name: '체리콕', img: '../assets/images/menu/cherrycoke.png' },
+        { name: '유니콘프라페', img: '../assets/images/menu/unicornfrappe.png' },
+        { name: '민트프라페', img: '../assets/images/menu/mintfrappe.png' },
+        { name: '딸기퐁크러쉬', img: '../assets/images/menu/strawberrycrush.png' }
     ],
-
-    food : [
-
-    ],
-
-    md : [
-        
-    ]
+    food: [],
+    md: []
 };
 
+// 저장된 카테고리 불러오기
+const selectedCategory = localStorage.getItem('selectedCategory');
+console.log("선택된 카테고리:", selectedCategory);
 
-// 탭 버튼을 클릭했을 때 해당 카테고리의 음료 데이터를 로드
+// 선택된 카테고리에 해당하는 탭을 활성화
+document.querySelectorAll('.tab').forEach(tab => {
+    const category = tab.getAttribute('data-category');
+    if (category === selectedCategory) {
+        tab.classList.add('active');
+    } else {
+        tab.classList.remove('active');
+    }
+});
+
+// 탭 버튼 클릭 시 해당 카테고리의 메뉴 데이터를 로드
 document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', function() {
-        // 모든 탭에서 active 클래스 제거 후 클릭한 탭에만 추가
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         this.classList.add('active');
 
-        // 선택한 카테고리의 데이터 로드
         const category = this.getAttribute('data-category');
         loadMenuItems(category);
     });
 });
 
-// 선택한 카테고리에 맞는 메뉴 항목을 menu-grid에 표시
+// 선택한 카테고리에 맞는 메뉴 항목을 menuGrid에 표시
 function loadMenuItems(category) {
     const menuGrid = document.getElementById('menuGrid');
     menuGrid.innerHTML = ''; // 기존 메뉴 항목을 지우기
 
-    // 선택한 카테고리의 데이터 가져오기
     const items = menuData[category];
     items.forEach(item => {
-        // 각 메뉴 항목을 HTML로 생성
         const menuItem = document.createElement('div');
         menuItem.classList.add('menu-item');
 
@@ -75,31 +78,26 @@ function loadMenuItems(category) {
         const name = document.createElement('p');
         name.textContent = item.name;
 
-        // 요소를 menu-item에 추가
         menuItem.appendChild(badge);
         menuItem.appendChild(img);
         menuItem.appendChild(name);
 
-        // menuGrid에 추가
         menuGrid.appendChild(menuItem);
+
+        menuItem.addEventListener('click', function() {
+            const menuItemName = item.name;
+            localStorage.setItem('selectedMenuItem', menuItemName);
+            window.location.href = "askTemperature.html";
+        });
     });
 }
 
-// 초기 로드 시 커피 메뉴를 표시
-loadMenuItems('coffee');
+// 초기 로드 시 선택된 카테고리의 메뉴를 표시
+if (selectedCategory) {
+    loadMenuItems(selectedCategory);
+}
 
-
+// '장바구니' 버튼 클릭 시 shoppingCart.html로 이동
 document.querySelector('.complete-btn').addEventListener('click', function() {
-    window.location.href = "shoppingCart.html"; 
-    // 선택 완료 시의 동작 로직 추가 (예: 다음 페이지로 이동)
+    window.location.href = "shoppingCart.html";
 });
-//
-
-document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', function() {
-        const menuItemName = this.querySelector('p').textContent; // 메뉴 이름 가져오기
-        localStorage.setItem('selectedMenuItem', menuItemName); // localStorage에 저장
-        window.location.href = "askTemperature.html"; // 온도 선택 화면으로 이동
-    });
-});
-
