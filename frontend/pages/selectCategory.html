@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종류 선택</title>
+    <link rel="stylesheet" href="../css/selectCategory.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <div class="header">
+        <button class="back-btn">&larr;</button>
+        <div class="progress-bar">
+            <div class="progress" style="width: 33%;"></div> <!-- 진행률 조정 -->
+        </div>
+        <span class="page-count">2/6</span>
+    </div>
+
+    <!-- 컨테이너 -->
+    <div class="container">
+        <h1>종류 선택</h1>
+        <div class="options">
+            <div class="option" id="coffee">
+                <img src="../assets/images/coffee.png" alt="커피" class="icon">
+                <p>커피</p>
+            </div>
+            <div class="option" id="tea">
+                <img src="../assets/images/tea.png" alt="차" class="icon">
+                <p>차</p>
+            </div>
+            <div class="option" id="drink">
+                <img src="../assets/images/drink.png" alt="음료" class="icon">
+                <p>음료</p>
+            </div>
+            <div class="option" id="food">
+                <img src="../assets/images/sandwich.png" alt="푸드" class="icon">
+                <p>푸드</p>
+            </div>
+            <div class="option" id="md">
+                <img src="../assets/images/mgc.png" alt="상품" class="icon">
+                <p>상품</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 장바구니 버튼 -->
+    <button class="complete-btn">장바구니</button>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="../js/selectCategory.js"></script> 
+</body>
+</html>
