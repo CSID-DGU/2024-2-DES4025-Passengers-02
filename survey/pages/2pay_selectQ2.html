@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#2. 결제 방식</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#2-2. 키오스크를 통해 결제를 진행할 때 실물 카드 결제와 삼성 페이와 같은 모바일 간편 결제 중 선호하는 방식은 무엇인가요?</h1>
+        <div class="options">
+            <button class="option" id="card">
+                <p>실물 카드 결제</p>
+            </button>
+            <button class="option" id="mobile">
+                <p>모바일 간편 결제</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("card").addEventListener("click", function() {
+            localStorage.setItem("Pay_Q2", "실물 카드 결제");
+            window.location.href = "3order_selectQ1.html"; 
+        });
+
+        document.getElementById("mobile").addEventListener("click", function() {
+            localStorage.setItem("Pay_Q2", "모바일 간편 결제");
+            window.location.href = "3order_selectQ1.html"; 
+        });
+    </script>
+
+</body>
+</html>

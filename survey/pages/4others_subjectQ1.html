@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#4. 기타</title>
+    <link rel="stylesheet" href="../css/subject.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>지금까지 사용한 설문 방식으로 메뉴 주문을 한다면 어떤가요?</h1>
+        <form id="feedbackForm">
+            <textarea id="feedback" name="Others_Q1" placeholder="개선이 필요한 점과 좋았던 점을 작성해주세요." required></textarea>
+            <button type="button" id="submitButton" class="submit-btn">제출하기</button>
+        </form>
+    </div>
+
+    <script>
+        // Web App URL (Google Apps Script에서 생성된 URL로 교체)
+        const webAppUrl = "https://script.google.com/macros/s/AKfycbwcDOFa3egi8tM8R99EKM-TGjcISm9eVaqCsec1_Vx3c_C8LUZRG2f4seZdfatzReIgHA/exec";
+
+        // 제출 버튼 클릭 이벤트
+        document.getElementById("submitButton").addEventListener("click", function() {
+            // 새로운 데이터 저장
+            const feedback = document.getElementById("feedback").value;
+            localStorage.setItem("Others_Q1", feedback);
+
+            // Local Storage 데이터를 가져오기
+            const data = {
+                Mobile_Q1: localStorage.getItem("Mobile_Q1"),
+                Mobile_Q2: localStorage.getItem("Mobile_Q2"),
+                Mobile_Q3: localStorage.getItem("Mobile_Q3"),
+                Mobile_Q4: localStorage.getItem("Mobile_Q4"),
+                Pay_Q1: localStorage.getItem("Pay_Q1"),
+                Pay_Q2: localStorage.getItem("Pay_Q2"),
+                Order_Q1: localStorage.getItem("Order_Q1"),
+                Order_Q2: localStorage.getItem("Order_Q2"),
+                Order_Q3: localStorage.getItem("Order_Q3"),
+                Others_Q1: localStorage.getItem("Others_Q1"),
+            };
+
+            // 데이터를 Google Sheets로 전송
+            fetch(webAppUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data),
+                mode: "no-cors"
+            })
+            .then(() => {
+                alert("데이터 전송 성공!");
+                window.location.href = "5end.html";
+            })
+            .catch(error => {
+                alert("데이터 전송 실패: " + error);
+            });
+
+        });
+    </script>
+
+</body>
+</html>

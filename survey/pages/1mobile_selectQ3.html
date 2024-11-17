@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1. 모바일 기기의 사용</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#1-3. 접근성 기능을 일상 생활에서 얼마나 사용하며 실제로 편리하다고 느끼시나요?</h1>
+        <div class="options">
+            <button class="option" id="always">
+                <p>항상 사용</p>
+            </button>
+            <button class="option" id="often">
+                <p>종종 사용</p>
+            </button>
+            <button class="option" id="sometimes">
+                <p>가끔 사용</p>
+            </button>
+            <button class="option" id="never">
+                <p>사용 X</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 버튼 클릭 이벤트 리스너
+        document.getElementById("always").addEventListener("click", function() {
+            localStorage.setItem("Mobile_Q3", "항상 사용");
+            window.location.href = "1mobile_subjectQ4.html"; 
+        });
+
+        document.getElementById("often").addEventListener("click", function() {
+            localStorage.setItem("Mobile_Q3", "종종 사용");
+            window.location.href = "1mobile_subjectQ4.html"; 
+        });
+
+        document.getElementById("sometimes").addEventListener("click", function() {
+            localStorage.setItem("Mobile_Q3", "가끔 사용");
+            window.location.href = "1mobile_subjectQ4.html"; 
+        });
+
+        document.getElementById("never").addEventListener("click", function() {
+            localStorage.setItem("Mobile_Q3", "사용 X");
+            window.location.href = "1mobile_subjectQ4.html"; 
+        });
+    </script>
+
+</body>
+</html>

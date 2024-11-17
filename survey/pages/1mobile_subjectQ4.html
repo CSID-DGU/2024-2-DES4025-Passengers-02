@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1. 모바일 기기의 사용</title>
+    <link rel="stylesheet" href="../css/subject.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#1-4. VoiceOver와 Talkback과 같은 접근성 기능에서 개선이 필요한 점은 무엇인가요?</h1>
+        <form id="feedbackForm">
+            <textarea id="feedback" name="Mobile_Q4" placeholder="개선이 필요한 점을 작성해주세요." required></textarea>
+            <button type="button" id="submitButton" class="submit-btn">저장</button>
+        </form>
+    </div>
+
+    <script>
+        // Local Storage에 데이터 저장 함수
+        document.getElementById("submitButton").addEventListener("click", function() {
+            const feedback = document.getElementById("feedback").value;
+            localStorage.setItem("Mobile_Q4", feedback);
+            window.location.href = "2pay_selectQ1.html"; 
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1. 모바일 기기의 사용</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#1-1. 접근성 기능을 활용한 모바일 기기의 사용이 원활하신가요?</h1>
+        <div class="options">
+            <button class="option" id="yes">
+                <p>네</p>
+            </button>
+            <button class="option" id="no">
+                <p>아니오</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("yes").addEventListener("click", function() {
+            localStorage.setItem("Mobile_Q1", "네");
+            window.location.href = "1mobile_selectQ2.html"; 
+        });
+
+        document.getElementById("no").addEventListener("click", function() {
+            localStorage.setItem("Mobile_Q1", "아니오");
+            window.location.href = "1mobile_selectQ2.html"; 
+        });
+    </script>
+
+</body>
+</html>

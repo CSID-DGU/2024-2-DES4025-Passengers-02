@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#3. 주문 방식</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#3-2. 매장 내에서 주문과 테이크 아웃 중 무엇을 더 많이 이용하시나요?</h1>
+        <div class="options">
+            <button class="option" id="dining">
+                <p>매장 내 주문</p>
+            </button>
+            <button class="option" id="takeout">
+                <p>테이크 아웃</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 버튼 클릭 이벤트 리스너
+        document.getElementById("dining").addEventListener("click", function() {
+            localStorage.setItem("Order_Q3", "매장 내 주문");
+            window.location.href = "4others_subjectQ1.html"; 
+        });
+
+        document.getElementById("takeout").addEventListener("click", function() {
+            localStorage.setItem("Order_Q3", "테이크 아웃");
+            window.location.href = "4others_subjectQ1.html"; 
+        });
+
+    </script>
+
+</body>
+</html>

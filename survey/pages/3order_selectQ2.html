@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#3. 주문 방식</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#3-2. 매장에서 메뉴를 주문할 때 가장 많이 사용하는 방식은 어떤 것인가요?</h1>
+        <div class="options">
+            <button class="option" id="kiosk">
+                <p>키오스크</p>
+            </button>
+            <button class="option" id="app">
+                <p>모바일 오더 앱 주문</p>
+            </button>
+            <button class="option" id="help">
+                <p>동행인에게 요청</p>
+            </button>
+            <button class="option" id="face">
+                <p>직접 대면으로 주문</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 버튼 클릭 이벤트 리스너
+        document.getElementById("kiosk").addEventListener("click", function() {
+            localStorage.setItem("Order_Q2", "키오스크");
+            window.location.href = "3order_selectQ3.html"; 
+        });
+
+        document.getElementById("app").addEventListener("click", function() {
+            localStorage.setItem("Order_Q2", "모바일 오더 앱 주문");
+            window.location.href = "3order_selectQ3.html"; 
+        });
+
+        document.getElementById("help").addEventListener("click", function() {
+            localStorage.setItem("Order_Q2", "동행인에게 요청");
+            window.location.href = "3order_selectQ3.html"; 
+        });
+
+        document.getElementById("face").addEventListener("click", function() {
+            localStorage.setItem("Order_Q2", "직접 대면으로 주문");
+            window.location.href = "3order_selectQ3.html"; 
+        });
+    </script>
+
+</body>
+</html>
