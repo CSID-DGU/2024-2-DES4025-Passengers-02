@@ -1,0 +1,72 @@
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0 1em;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* 헤더 스타일 */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+/* 버튼 스타일 */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.option {
+    width: 100%;
+    padding: 1.5em;
+    font-size: 21px;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    border: 2px solid #d9d9d9;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+    border-color: #b3b3b3;
+}
+
+.option.selected {
+    background-color: #d9d9d9;
+    border-color: #999999;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .option {
+        font-size: 16px;
+        padding: 1.2em;
+    }
+}
