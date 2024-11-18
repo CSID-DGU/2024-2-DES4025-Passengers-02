@@ -73,7 +73,7 @@
 
 |김지우|주희윤|한예원|
 |:-----:|:-----:|:-----:|
-|[@ryann1203](https://github.com/ryann1203)|[@희윤](https://github.com/희윤)|[@yewoonn](https://github.com/yewoonn)|
+|[@ryann1203](https://github.com/ryann1203)|[@gmldbs3104](https://github.com/gmldbs3104)|[@yewoonn](https://github.com/yewoonn)|
 |동국대학교 <br>컴퓨터공학과 22학번|동국대학교<br> 컴퓨터공학과 23학번|동국대학교<br> 컴퓨터공학과 22학번|
 
 <br>
@@ -83,5 +83,5 @@
 |김지민|안성현|
 |:-----:|:-----:|
 |[@J1miin](https://github.com/J1miin)|[@anismynm](https://github.com/anismynm)|
-|동국대학교<br> 컴퓨터공학과 22학번|동국대학교<br> 컴퓨터공학과 22학번|
+|동국대학교<br> 컴퓨터공학과 22학번|동국대학교<br> 컴퓨터공학과 20학번|
 
