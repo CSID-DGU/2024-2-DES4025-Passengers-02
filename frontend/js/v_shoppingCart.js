@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const totalItemPrice = menuPrice * item.quantity; // 개별 항목 총액 계산
 
             const menuInfo = document.createElement('h3');
-            menuInfo.textContent = `${item.menu} - ${menuPrice}원 x ${item.quantity || 1}개 = ${totalItemPrice}원`;
+            menuInfo.textContent = `${item.menu} - ${totalItemPrice}원`;
 
             // 삭제 버튼
             const deleteBtn = document.createElement('button');
