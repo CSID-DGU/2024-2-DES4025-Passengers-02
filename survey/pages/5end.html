@@ -4,7 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
-    <link rel="stylesheet" href="/survey/css/select.css">
+    <style>
+        /* 기본 스타일 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* 검은 배경 */
+            color: #FFFFFF; /* 흰 텍스트 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 0 1em;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* 헤더 스타일 */
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 2em;
+            color: #FFFF00; /* 밝은 노란색으로 헤더 강조 */
+        }
+
+        /* 텍스트 스타일 */
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* 버튼 스타일 */
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .option {
+            width: 100%;
+            padding: 1.5em;
+            font-size: 21px;
+            font-weight: bold;
+            background-color: #333333; /* 어두운 회색 배경 */
+            color: #FFFF00; /* 밝은 노란 텍스트 */
+            border: 2px solid #FFFF00; /* 노란색 테두리 */
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none; /* 링크 밑줄 제거 */
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+
+        /* 버튼 호버 상태 */
+        .option:hover {
+            background-color: #FFFF00; /* 노란색 배경 */
+            color: #000000 !important; /* 검은 텍스트 */
+            border-color: #FFFF00; /* 노란색 테두리 */
+        }
+
+        /* 반응형 스타일 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .option {
+                font-size: 16px;
+                padding: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
