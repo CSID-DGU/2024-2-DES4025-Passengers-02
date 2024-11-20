@@ -9,20 +9,20 @@
 <body>
 
     <div class="container">
-        <h1>#1-2. 기기에 입력을 할 때 점자 키보드와 모바일 기기 중 어느 것이 더 편하신가요?</h1>
+        <h1>기기에 입력을 할 때 점자 키보드와 모바일 기기 중 어느 것이 더 편하신가요?</h1>
         <div class="options">
             <button class="option" id="yes">
-                <p>점자 키보드</p>
+                <p>선택 1 점자 키보드</p>
             </button>
             <button class="option" id="no">
-                <p>모바일 기기</p>
+                <p>선택 2 모바일 기기</p>
             </button>
         </div>
     </div>
 
     <script>
         document.getElementById("yes").addEventListener("click", function() {
-            localStorage.setItem("Mobile_Q2", "점자 키보드Mobile_Q2");
+            localStorage.setItem("Mobile_Q2", "점자 키보드");
             window.location.href = "1mobile_selectQ3.html"; 
         });
 

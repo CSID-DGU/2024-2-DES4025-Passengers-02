@@ -9,19 +9,19 @@
 <body>
 
     <div class="container">
-        <h1>#1-3. 접근성 기능을 일상 생활에서 얼마나 사용하시나요?</h1>
+        <h1>접근성 기능을 일상 생활에서 얼마나 사용하시나요?</h1>
         <div class="options">
             <button class="option" id="always">
-                <p>항상 사용</p>
+                <p>선택 1 항상 사용</p>
             </button>
             <button class="option" id="often">
-                <p>종종 사용</p>
+                <p>선택 2 종종 사용</p>
             </button>
             <button class="option" id="sometimes">
-                <p>가끔 사용</p>
+                <p>선택 3 가끔 사용</p>
             </button>
             <button class="option" id="never">
-                <p>사용 하지 않음</p>
+                <p>선택 4 사용 하지 않음</p>
             </button>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <script>
         // 버튼 클릭 이벤트 리스너
         document.getElementById("always").addEventListener("click", function() {
-            localStorage.setItem("Mobile_Q3", "항상 사용Mobile_Q3");
+            localStorage.setItem("Mobile_Q3", "항상 사용");
             window.location.href = "1mobile_subjectQ4.html"; 
         });
 

@@ -9,20 +9,20 @@
 <body>
 
     <div class="container">
-        <h1>#2-2. 현장에서 키오스크를 통해 결제를 진행할 때 다음의 결제 수단 중 선호하는 방식은 무엇인가요?</h1>
+        <h1>현장에서 키오스크를 통해 결제를 진행할 때 다음의 결제 수단 중 선호하는 방식은 무엇인가요?</h1>
         <div class="options">
             <button class="option" id="card">
-                <p>실물 카드 결제 (키오스크에 부착된 카드 리더기를 통한 결제)</p>
+                <p>선택 1 실물 카드 결제 (키오스크에 부착된 카드 리더기를 통한 결제)</p>
             </button>
             <button class="option" id="mobile">
-                <p> 오프라인 모바일 결제 (삼성, 애플페이와 같은 간편 결제)</p>
+                <p>선택 2 오프라인 모바일 결제 (삼성, 애플페이와 같은 간편 결제)</p>
             </button>
         </div>
     </div>
 
     <script>
         document.getElementById("card").addEventListener("click", function() {
-            localStorage.setItem("Pay_Q2", "실물 카드 결제Pay_Q2");
+            localStorage.setItem("Pay_Q2", "실물 카드 결제");
             window.location.href = "3order_selectQ1.html"; 
         });
 

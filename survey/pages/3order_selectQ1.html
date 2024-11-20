@@ -9,19 +9,19 @@
 <body>
 
     <div class="container">
-        <h1>#3-1. 매장 내의 키오스크 사용 빈도가 어느 정도 되나요?</h1>
+        <h1>매장 내의 키오스크 사용 빈도가 어느 정도 되나요?</h1>
         <div class="options">
             <button class="option" id="always">
-                <p>항상 사용한다.</p>
+                <p>선택 1 항상 사용한다.</p>
             </button>
             <button class="option" id="nopeople">
-                <p>대기 인원이 없는 경우 사용한다.</p>
+                <p>선택 2 대기 인원이 없는 경우 사용한다.</p>
             </button>
             <button class="option" id="noemployee">
-                <p>주문을 받는 직원이 없는 경우 사용한다.</p>
+                <p>선택 3 주문을 받는 직원이 없는 경우 사용한다.</p>
             </button>
             <button class="option" id="never">
-                <p>아예 사용하지 않는다.</p>
+                <p>선택 4 아예 사용하지 않는다.</p>
             </button>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <script>
         // 버튼 클릭 이벤트 리스너
         document.getElementById("always").addEventListener("click", function() {
-            localStorage.setItem("Order_Q1", "항상 사용한다.Order_Q1");
+            localStorage.setItem("Order_Q1", "항상 사용한다.");
             window.location.href = "3order_selectQ2.html"; 
         });
 

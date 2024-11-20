@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <h1>#1-4. VoiceOver와 Talkback과 같은 접근성 기능에서 개선이 필요한 점은 무엇인가요?</h1>
+        <h1>VoiceOver와 Talkback과 같은 접근성 기능에서 개선이 필요한 점은 무엇인가요?</h1>
         <h2 style="margin-bottom: 2em;">(여러분의 다양한 의견을 듣기 위해 주관식 문항을 제시한 점 양해 부탁드립니다.)</h1>
 
         <form id="feedbackForm">
@@ -25,15 +25,13 @@
             localStorage.setItem("Mobile_Q4", feedback);
             window.location.href = "2pay_selectQ1.html"; 
 
-
-                        // User_Q3 데이터 가져오기
             const userAgeGroup = localStorage.getItem("User_Q3");
 
             // 조건에 따라 다른 페이지로 이동
-            if (userAgeGroup === "만 19세 이상~65세 미만" || userAgeGroup === "만 65세 이상") {
-                window.location.href = "2pay_selectQ1.html";
-            } else {
+            if (userAgeGroup === "만 19세 미만") {
                 window.location.href = "3order_selectQ1.html";
+            } else {
+                window.location.href = "2pay_selectQ1.html";
             }
         });
 

@@ -9,19 +9,19 @@
 <body>
 
     <div class="container">
-        <h1>#2-1. 평소 다음의 결제 수단 중 가장 선호하는 방식은 무엇인가요?</h1>
+        <h1>평소 다음의 결제 수단 중 가장 선호하는 방식은 무엇인가요?</h1>
         <div class="options">
             <button class="option" id="cash">
-                <p>현금 결제</p>
+                <p>선택 1 현금 결제</p>
             </button>
             <button class="option" id="card">
-                <p>실물 카드 결제</p>
+                <p>선택 2 실물 카드 결제</p>
             </button>
             <button class="option" id="phone">
-                <p>온라인 모바일 결제(휴대폰만을 통해서 진행하는 카드 결제, 계좌이체 등)</p>
+                <p>선택 3 온라인 모바일 결제(휴대폰만을 통해서 진행하는 카드 결제, 계좌이체 등)</p>
             </button>
             <button class="option" id="mobile">
-                <p>오프라인 모바일 결제(삼성, 애플페이와 같은 간편 결제)</p>
+                <p>선택 4 오프라인 모바일 결제(삼성, 애플페이와 같은 간편 결제)</p>
             </button>
         </div>
     </div>
@@ -43,7 +43,7 @@
         });
 
         document.getElementById("cash").addEventListener("click", function() {
-            localStorage.setItem("Pay_Q1", "현금 결제Pay_Q1");
+            localStorage.setItem("Pay_Q1", "현금 결제");
             window.location.href = "2pay_selectQ2.html"; 
         });
     </script>

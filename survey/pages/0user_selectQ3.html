@@ -9,28 +9,36 @@
 <body>
 
     <div class="container">
-        <h1>#0-3. 연령대가 어떻게 되시나요?</h1>
+        <h1>연령대가 어떻게 되시나요?</h1>
         <div class="options">
             <button class="option" id="child">
-                <p>만 19세 미만</p>
+                <p>선택 1 만 19세 미만</p>
             </button>
             <button class="option" id="youth">
-                <p>만 19세 이상~65세 미만</p>
+                <p>선택 2 만 19세 이상~40세 미만</p>
+            </button>
+            <button class="option" id="old">
+                <p>선택 3 만 40세 이상~65세 미만</p>
             </button>
             <button class="option" id="elderly">
-                <p>만 65세 이상</p>
+                <p>선택 4 만 65세 이상</p>
             </button>
         </div>
     </div>
 
     <script>
         document.getElementById("child").addEventListener("click", function() {
-            localStorage.setItem("User_Q3", "만 19세 미만User_Q3");
+            localStorage.setItem("User_Q3", "만 19세 미만");
             window.location.href = "1mobile_selectQ1.html"; 
         });
 
         document.getElementById("youth").addEventListener("click", function() {
-            localStorage.setItem("User_Q3", "만 19세 이상~65세 미만");
+            localStorage.setItem("User_Q3", "만 19세 이상~40세 미만");
+            window.location.href = "1mobile_selectQ1.html"; 
+        });
+
+        document.getElementById("old").addEventListener("click", function() {
+            localStorage.setItem("User_Q3", "만 40세 이상~65세 미만");
             window.location.href = "1mobile_selectQ1.html"; 
         });
 
