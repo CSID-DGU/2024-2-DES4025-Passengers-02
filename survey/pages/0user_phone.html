@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#0. 인적 사항</title>
+    <link rel="stylesheet" href="../css/phone.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#0-1. 기프티콘 발송을 위해 전화번호를 입력해 주세요.</h1>
+        <p>입력된 정보는 기프티콘 발송 외 다른 용도로 사용되지 않으며, 발송 완료 후 즉시 파기됩니다.</p>
+        
+        <form id="phoneForm">
+            <label for="phone">전화번호</label>
+            <p>※ 전화번호는 숫자만 입력해 주세요</p>
+            <input type="tel" id="phone" name="phone" placeholder="01012345678" pattern="[0-9]{10,11}" required>
+            <div class="buttons">
+                <button type="submit" class="option">제출</button>
+                <button type="button" class="option" id="cancel">취소</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // 전화번호 제출 처리
+        document.getElementById("phoneForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // 폼 기본 제출 동작 방지
+            
+            const phoneNumber = document.getElementById("phone").value;
+
+            if (phoneNumber) {
+                localStorage.setItem("User_Phone", phoneNumber);
+                window.location.href = "0user_selectQ2.html"; // 다음 페이지로 이동
+            } else {
+                alert("전화번호를 올바르게 입력해 주세요.");
+            }
+        });
+
+        // 취소 버튼 동작
+        document.getElementById("cancel").addEventListener("click", function() {
+            localStorage.setItem("User_Phone", "취소됨");
+            window.location.href = "0user_selectQ2.html"; // 취소 시 다음 단계로 이동
+        });
+    </script>
+
+</body>
+</html>

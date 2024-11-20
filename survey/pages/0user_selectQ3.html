@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#0. 인적 사항</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#0-3. 연령대가 어떻게 되시나요?</h1>
+        <div class="options">
+            <button class="option" id="child">
+                <p>만 19세 미만</p>
+            </button>
+            <button class="option" id="youth">
+                <p>만 19세 이상~65세 미만</p>
+            </button>
+            <button class="option" id="elderly">
+                <p>만 65세 이상</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("child").addEventListener("click", function() {
+            localStorage.setItem("User_Q3", "만 19세 미만User_Q3");
+            window.location.href = "1mobile_selectQ1.html"; 
+        });
+
+        document.getElementById("youth").addEventListener("click", function() {
+            localStorage.setItem("User_Q3", "만 19세 이상~65세 미만");
+            window.location.href = "1mobile_selectQ1.html"; 
+        });
+
+        document.getElementById("elderly").addEventListener("click", function() {
+            localStorage.setItem("User_Q3", "만 65세 이상");
+            window.location.href = "1mobile_selectQ1.html"; 
+        });
+        
+    </script>
+
+</body>
+</html>

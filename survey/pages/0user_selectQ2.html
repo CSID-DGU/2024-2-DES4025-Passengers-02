@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#0. 인적 사항</title>
+    <link rel="stylesheet" href="../css/select.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>#0-2. 서비스 개선을 위해 시각 장애 정도에 대해 수집하고 있습니다. 귀하의 상황에 맞는 버튼을 선택해주세요.</h1>
+        <div class="options">
+            <button class="option" id="high">
+                <p>전맹, 전혀 보이지 않음</p>
+            </button>
+            <button class="option" id="middle">
+                <p>중증 저시력, 밝고 어두운 정도만을 구별</p>
+            </button>
+            <button class="option" id="low">
+                <p>경도 저시력, 시야가 좁거나 흐릿함</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 버튼 클릭 이벤트 리스너
+        document.getElementById("high").addEventListener("click", function() {
+            localStorage.setItem("User_Q2", "전맹User_Q2");
+            window.location.href = "0user_selectQ3.html"; 
+        });
+
+        document.getElementById("middle").addEventListener("click", function() {
+            localStorage.setItem("User_Q2", "중증 저시력");
+            window.location.href = "0user_selectQ3.html"; 
+        });
+
+        document.getElementById("low").addEventListener("click", function() {
+            localStorage.setItem("User_Q2", "경도 저시력");
+            window.location.href = "0user_selectQ3.html"; 
+        });
+    </script>
+
+</body>
+</html>

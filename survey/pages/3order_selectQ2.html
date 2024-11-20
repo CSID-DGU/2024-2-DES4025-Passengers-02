@@ -12,13 +12,13 @@
         <h1>#3-2. 매장에서 메뉴를 주문할 때 가장 많이 사용하는 방식은 어떤 것인가요?</h1>
         <div class="options">
             <button class="option" id="kiosk">
-                <p>키오스크</p>
+                <p>키오스크 주문</p>
             </button>
             <button class="option" id="app">
-                <p>모바일 오더 앱 주문</p>
+                <p>모바일 오더(해당 식당 전용) 앱을 통한 주문</p>
             </button>
             <button class="option" id="help">
-                <p>동행인에게 요청</p>
+                <p>동행인, 직원에게 요청하여 주문</p>
             </button>
             <button class="option" id="face">
                 <p>직접 대면으로 주문</p>
@@ -29,7 +29,7 @@
     <script>
         // 버튼 클릭 이벤트 리스너
         document.getElementById("kiosk").addEventListener("click", function() {
-            localStorage.setItem("Order_Q2", "키오스크");
+            localStorage.setItem("Order_Q2", "키오스크Order_Q2");
             window.location.href = "3order_selectQ3.html"; 
         });
 

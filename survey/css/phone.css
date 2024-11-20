@@ -1,0 +1,119 @@
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* 검은 배경 */
+    color: #FFFFFF; /* 흰 텍스트 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0 1em;
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* 헤더 스타일 */
+h1 {
+    font-size: 32px; /* 기존보다 크기 증가 */
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    color: #FFFF00; /* 밝은 노란색으로 헤더 강조 */
+}
+
+/* 텍스트 스타일 */
+p {
+    font-size: 20px; /* 기존보다 크기 증가 */
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+
+label {
+    font-size: 20px; /* 기존보다 크기 증가 */
+    line-height: 1.8;
+    margin-bottom: 1.5em;
+}
+
+/* 입력 필드 스타일 */
+input[type="tel"] {
+    width: 100%;
+    padding: 1em;
+    font-size: 20px; /* 입력 텍스트 크기 증가 */
+    background-color: #1A1A1A; /* 어두운 배경 */
+    color: #FFFFFF; /* 흰 텍스트 */
+    border: 2px solid #FFFF00; /* 노란색 테두리 */
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    margin-bottom: 1em;
+}
+
+input[type="tel"]:focus {
+    background-color: #333333; /* 조금 더 밝은 배경 */
+    border-color: #FFD700; /* 금색 테두리 */
+}
+
+/* 작은 텍스트 (설명) */
+small {
+    font-size: 16px; /* 기존보다 크기 증가 */
+    color: #BBBBBB; /* 밝은 회색 */
+    display: block;
+    margin-bottom: 1.5em;
+}
+
+/* 버튼 스타일 */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 1.2em;
+    font-size: 20px; /* 버튼 텍스트 크기 증가 */
+    font-weight: bold;
+    background-color: #333333; /* 어두운 회색 배경 */
+    color: #FFFF00; /* 밝은 노란 텍스트 */
+    border: 2px solid #FFFF00; /* 노란색 테두리 */
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #FFFF00; /* 노란색 배경 */
+    color: #000000 !important; /* 검은 텍스트 */
+    border-color: #FFFF00; /* 노란색 테두리 */
+}
+
+/* 반응형 스타일 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px; /* 작은 화면에서도 적절한 크기로 조정 */
+    }
+
+    p {
+        font-size: 18px; /* 작은 화면에서도 적절한 크기로 조정 */
+    }
+
+    input[type="tel"] {
+        font-size: 18px; /* 입력 필드 크기 조정 */
+    }
+
+    button {
+        font-size: 18px; /* 버튼 텍스트 크기 조정 */
+        padding: 1em;
+    }
+}

@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#1. 모바일 기기의 사용</title>
+    <title>#0. 인적 사항</title>
     <link rel="stylesheet" href="../css/select.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>#1-2. 기기에 입력을 할 때 점자 키보드와 모바일 기기 중 어느 것이 더 편하신가요?</h1>
+        <h1>#0-1. 기프티콘 발송을 위한 개인 정보 입력을 진행하겠습니까?</h1>
         <div class="options">
             <button class="option" id="yes">
-                <p>점자 키보드</p>
+                <p>네</p>
             </button>
             <button class="option" id="no">
-                <p>모바일 기기</p>
+                <p>아니오</p>
             </button>
         </div>
     </div>
 
     <script>
         document.getElementById("yes").addEventListener("click", function() {
-            localStorage.setItem("Mobile_Q2", "점자 키보드Mobile_Q2");
-            window.location.href = "1mobile_selectQ3.html"; 
+            localStorage.setItem("User_Q1", "네User_Q1");
+            window.location.href = "0user_phone.html"; 
         });
 
         document.getElementById("no").addEventListener("click", function() {
-            localStorage.setItem("Mobile_Q2", "모바일 기기");
-            window.location.href = "1mobile_selectQ3.html"; 
+            localStorage.setItem("User_Q1", "아니오");
+            window.location.href = "0user_selectQ2.html"; 
         });
     </script>
 

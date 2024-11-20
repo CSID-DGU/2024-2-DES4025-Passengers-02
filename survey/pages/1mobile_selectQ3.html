@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-        <h1>#1-3. 접근성 기능을 일상 생활에서 얼마나 사용하며 실제로 편리하다고 느끼시나요?</h1>
+        <h1>#1-3. 접근성 기능을 일상 생활에서 얼마나 사용하시나요?</h1>
         <div class="options">
             <button class="option" id="always">
                 <p>항상 사용</p>
@@ -21,7 +21,7 @@
                 <p>가끔 사용</p>
             </button>
             <button class="option" id="never">
-                <p>사용 X</p>
+                <p>사용 하지 않음</p>
             </button>
         </div>
     </div>
@@ -29,7 +29,7 @@
     <script>
         // 버튼 클릭 이벤트 리스너
         document.getElementById("always").addEventListener("click", function() {
-            localStorage.setItem("Mobile_Q3", "항상 사용");
+            localStorage.setItem("Mobile_Q3", "항상 사용Mobile_Q3");
             window.location.href = "1mobile_subjectQ4.html"; 
         });
 
@@ -44,7 +44,7 @@
         });
 
         document.getElementById("never").addEventListener("click", function() {
-            localStorage.setItem("Mobile_Q3", "사용 X");
+            localStorage.setItem("Mobile_Q3", "사용 하지 않음");
             window.location.href = "1mobile_subjectQ4.html"; 
         });
     </script>

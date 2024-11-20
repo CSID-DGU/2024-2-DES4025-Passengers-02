@@ -10,6 +10,8 @@
 
     <div class="container">
         <h1>지금까지 사용한 설문 방식으로 메뉴 주문을 한다면 어떤가요?</h1>
+        <h2 style="margin-bottom: 2em;">(여러분의 다양한 의견을 듣기 위해 주관식 문항을 제시한 점 양해 부탁드립니다.)</h1>
+
         <form id="feedbackForm">
             <textarea id="feedback" name="Others_Q1" placeholder="개선이 필요한 점과 좋았던 점을 작성해주세요." required></textarea>
             <button type="button" id="submitButton" class="submit-btn">제출하기</button>
@@ -18,7 +20,7 @@
 
     <script>
         // Web App URL (Google Apps Script에서 생성된 URL로 교체)
-        const webAppUrl = "https://script.google.com/macros/s/AKfycbwcDOFa3egi8tM8R99EKM-TGjcISm9eVaqCsec1_Vx3c_C8LUZRG2f4seZdfatzReIgHA/exec";
+        const webAppUrl = "https://script.google.com/macros/s/AKfycbwMvUUMX1Yc4pE5K0sqR7XmFrQ7H0m1ndTTE9LPRNa9ndT6NESbXY9is9L3n8FnL4rzyA/exec";
 
         // 제출 버튼 클릭 이벤트
         document.getElementById("submitButton").addEventListener("click", function() {
@@ -28,6 +30,10 @@
 
             // Local Storage 데이터를 가져오기
             const data = {
+                User_Q1: localStorage.getItem("User_Q1"),
+                User_Q2: localStorage.getItem("User_Q2"),
+                User_Q3: localStorage.getItem("User_Q3"),
+                User_Phone: localStorage.getItem("User_Phone"),
                 Mobile_Q1: localStorage.getItem("Mobile_Q1"),
                 Mobile_Q2: localStorage.getItem("Mobile_Q2"),
                 Mobile_Q3: localStorage.getItem("Mobile_Q3"),
