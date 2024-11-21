@@ -4,16 +4,30 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: '아메리카노', price: '2000원' },
             { name: '카페라떼', price: '3000원' },
             { name: '카푸치노', price: '3500원' },
+            { name: '카페라떼', price: '3200원' },
+            { name: '카페모카', price: '3500원' },
+            { name: '바닐라라떼', price: '3700원' },
+            { name: '연유라떼', price: '3800원' },
+            { name: '에스프레소', price: '2500원' }
         ],
         tea: [
+            { name: '애플유자차', price: '3000원' },
+            { name: '캐모마일', price: '2800원' },
+            { name: '얼그레이', price: '2900원' },
+            { name: '자몽차', price: '3200원' },
+            { name: '레몬차', price: '2700원' },
             { name: '녹차', price: '2500원' },
-            { name: '홍차', price: '3000원' },
-            { name: '캐모마일', price: '3500원' },
+            { name: '페퍼민트', price: '2800원' }
         ],
         drink: [
-            { name: '망고 스무디', price: '4500원' },
-            { name: '딸기 주스', price: '4000원' },
-            { name: '레몬에이드', price: '3500원' },
+            { name: '골드망고스무디', price: '4000원' },
+            { name: '딸기주스', price: '3500원' },
+            { name: '녹차프라페', price: '4500원' },
+            { name: '라임모히또', price: '4200원' },
+            { name: '체리콕', price: '3000원' },
+            { name: '유니콘프라페', price: '5000원' },
+            { name: '민트프라페', price: '4300원' },
+            { name: '딸기퐁크러쉬', price: '4500원' }
         ],
         food: [
             { name: '크로와상', price: '2500원' },
