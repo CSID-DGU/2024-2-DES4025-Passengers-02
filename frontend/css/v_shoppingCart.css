@@ -67,25 +67,27 @@ h1 {
     font-weight: bold;
 }
 
+/* 버튼 스타일 수정 */
 .action-buttons {
     display: flex;
-    justify-content: center;
-    gap: 10px; /* 버튼 간격 */
+    flex-direction: column; /* 세로 정렬 */
+    gap: 20px; /* 버튼 간 간격 */
     margin-top: 20px; /* 위 요소와 간격 */
 }
 
 .action-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    padding: 15px 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    width: 100%; /* 버튼이 컨테이너 너비에 맞게 */
+    max-width: 400px; /* 최대 버튼 너비 */
+    transition: background-color 0.3s;
 }
 
 .action-btn:hover {
-    background-color: #e0e0e0;
-    border-color: #bbb;
+    background-color: #555;
 }
-

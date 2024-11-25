@@ -32,12 +32,14 @@ h1 {
 }
 
 .option {
-    width: 45%;
-    padding: 20px;
+    padding: 25px;
+    font-size: 23px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid #ddd;
     border-radius: 10px;
-    text-align: center;
     cursor: pointer;
-    border: 2px solid #ccc;
     transition: background-color 0.3s, border-color 0.3s;
 }
 

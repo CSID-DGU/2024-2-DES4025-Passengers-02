@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 전송 버튼 클릭 시 처리
     document.querySelector('.order-more-btn').addEventListener('click', function() {
-        alert('준비 중입니다.');
-        // 실제로는 새로운 주문 화면으로 이동하는 로직 추가 가능
+
     });
 });
 
