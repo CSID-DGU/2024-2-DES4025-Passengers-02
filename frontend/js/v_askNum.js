@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
     // 로컬스토리지에서 선택된 옵션을 가져오기
     const selectedMenu = localStorage.getItem('selectedMenuItem');
+    const selectedPrice = localStorage.getItem('selectedMenuPrice'); // 가격 가져오기
     const selectedTemperature = localStorage.getItem('selectedTemperature');
     const selectedOption = localStorage.getItem('selectedOption');
 
     // 콘솔에 선택된 값 출력
     console.log("선택된 메뉴:", selectedMenu);
+    console.log("선택된 가격:", selectedPrice);
     console.log("선택된 온도:", selectedTemperature);
     console.log("선택된 옵션:", selectedOption);
 
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const newItem = {
                 menu: selectedMenu,
-                price: '2000', // 가격은 추후 선택된 메뉴에 따라 수정 가능
+                price: parseInt(selectedPrice, 10),
                 quantity: quantity,
                 option: selectedOption,
                 temperature: selectedTemperature,

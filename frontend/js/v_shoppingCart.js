@@ -48,17 +48,19 @@ document.addEventListener('DOMContentLoaded', function () {
             totalPriceDisplay.textContent = '장바구니가 비어 있습니다.';
             return;
         }
+        console.log('현재 장바구니 데이터:', cart);
 
         cart.forEach((item, index) => {
             const cartItemDiv = document.createElement('div');
             cartItemDiv.classList.add('cart-item');
 
             // 메뉴 이름과 가격
-            const menuPrice = priceMap[item.menu] || 0; // 기본 가격 가져오기
+            const menuName = item.menu.name || item.menu; // 메뉴 이름 가져오기
+            const menuPrice = priceMap[menuName] || 0; // 메뉴 가격 가져오기
             const totalItemPrice = menuPrice * item.quantity; // 개별 항목 총액 계산
 
             const menuInfo = document.createElement('h3');
-            menuInfo.textContent = `${item.menu} - ${totalItemPrice}원`;
+            menuInfo.textContent = `${menuName} - ${totalItemPrice}원`;
 
             // 삭제 버튼
             const deleteBtn = document.createElement('button');
@@ -91,14 +93,24 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // 주문 데이터를 로컬스토리지에 저장
-        const total_price = cart.reduce((acc, item) => {
-            const itemPrice = priceMap[item.menu] || 0;
-            return acc + itemPrice * item.quantity;
-        }, 0);
+        // 주문 데이터를 생성
+        const orderDetail = cart.map(item => {
+            const menuName = item.menu.name || item.menu; // 메뉴 이름 가져오기
+            const menuPrice = item.menu.price || priceMap[menuName] || 0; // 메뉴 가격 가져오기
+            return {
+                name: menuName,
+                quantity: item.quantity,
+                price: menuPrice,
+                temperature: item.temperature || '',
+                option: item.option || ''
+            };
+        });
 
-        localStorage.setItem('total_price', total_price);
-        localStorage.setItem('orderDetail', JSON.stringify(cart));
+        const totalPrice = orderDetail.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+        // 주문 데이터를 로컬스토리지에 저장
+        localStorage.setItem('orderDetail', JSON.stringify(orderDetail));
+        localStorage.setItem('total_price', totalPrice);
 
         // 주문 페이지로 이동
         window.location.href = 'v_ordernum.html';
