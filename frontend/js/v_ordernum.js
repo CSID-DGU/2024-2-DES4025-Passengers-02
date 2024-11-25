@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // 서버에 주문 데이터 전송
     function sendOrderData() {
         const orderData = {
-            orderDetail: orderDetail,
+            orderDetail: JSON.stringify(orderDetail),
             total_price: total_price
         };
 
-        fetch(`http://211.188.49.69:8080/order/${storedOrderNum}`, {
+        fetch(`http://211.188.49.69:8080/${storedOrderNum}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

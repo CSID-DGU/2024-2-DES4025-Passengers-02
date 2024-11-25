@@ -6,45 +6,37 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log("선택된 메뉴:", selectedMenu);
     console.log("선택된 온도:", selectedTemperature);
 
-    let selectedOptions = []; // 여러 옵션을 담기 위한 배열
+    let selectedOption = null; // 현재 선택된 옵션
 
-    // 각 옵션 버튼에 클릭 이벤트 추가
-    document.querySelectorAll('.option').forEach(button => {
-        button.addEventListener('click', function () {
-            // 선택된 옵션의 ID 가져오기
-            const optionId = this.id;
-
-            // 선택한 옵션이 이미 배열에 존재하면 제거, 그렇지 않으면 추가
-            if (selectedOptions.includes(optionId)) {
-                selectedOptions = selectedOptions.filter(opt => opt !== optionId);
-                this.classList.remove('selected');
-            } else {
-                selectedOptions.push(optionId);
-                this.classList.add('selected');
-            }
-
-            console.log("선택된 옵션들:", selectedOptions);
-
-            // 선택된 옵션 표시 업데이트
-            const selectedOptionDisplay = document.getElementById('selectedOptionDisplay');
-            if (selectedOptions.length > 0) {
-                selectedOptionDisplay.textContent = `선택된 옵션은 ${selectedOptions.join(', ')} 입니다.`;
-            } else {
-                selectedOptionDisplay.textContent = "선택된 옵션이 없습니다.";
-            }
-        });
+    // 옵션 버튼 클릭 이벤트
+    document.getElementById('whipping').addEventListener('click', function () {
+        selectedOption = '휘핑크림 추가'; // 옵션 설정
+        document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected')); // 기존 선택 초기화
+        this.classList.add('selected'); // 현재 선택된 버튼 강조
     });
 
-    // 선택 완료 버튼 클릭 이벤트
-    document.getElementById('complete').addEventListener('click', function () {
-        if (selectedOptions.length > 0) {
-            // 로컬스토리지에 선택한 옵션 저장
-            localStorage.setItem('selectedOptions', JSON.stringify(selectedOptions));
+    document.getElementById('shot').addEventListener('click', function () {
+        selectedOption = '샷 추가'; // 옵션 설정
+        document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected')); // 기존 선택 초기화
+        this.classList.add('selected'); // 현재 선택된 버튼 강조
+    });
 
-            // 다음 페이지로 이동
-            window.location.href = 'v_askNum.html';
+    document.getElementById('none').addEventListener('click', function () {
+        selectedOption = '선택 없음'; // 옵션 설정
+        document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected')); // 기존 선택 초기화
+        this.classList.add('selected'); // 현재 선택된 버튼 강조
+
+        // 로컬스토리지 초기화
+        localStorage.removeItem('selectedOption');
+    });
+
+    // 완료 버튼 클릭 이벤트
+    document.querySelector('.complete-btn').addEventListener('click', function () {
+        if (selectedOption) {
+            localStorage.setItem('selectedOption', selectedOption); // 선택된 옵션 로컬 스토리지에 저장
+            window.location.href = 'v_askNum.html'; // 다음 페이지로 이동
         } else {
-            alert('옵션을 하나 이상 선택해주세요.');
+            alert("옵션을 선택해주세요.");
         }
     });
 });
