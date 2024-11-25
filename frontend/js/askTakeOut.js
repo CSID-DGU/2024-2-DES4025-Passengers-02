@@ -34,7 +34,7 @@ function sendTakeoutMode(takeoutMode) {
             console.log(data);  // data 객체 자체를 출력
             window.localStorage.setItem("order_num", data.order_num);
             //console.log(data.data);  // data 안에 있는 data 속성 출력
-            window.location.href = "selectMenu.html"; // 메뉴 선택 페이지로 이동
+            window.location.href = "selectCategory.html"; // 메뉴 선택 페이지로 이동
         } else {
             console.error(`에러: ${data.message}`);
             alert("서버에 정보를 전송하는 중 오류가 발생했습니다. 다시 시도해주세요.");

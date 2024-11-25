@@ -1,0 +1,102 @@
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+
+/* 수량 버튼 스타일 */
+.quantity-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.quantity-btn {
+    font-size: 2em;
+    padding: 1em;
+    background-color: #FFFFFF;
+    border: 2px solid #D9D9D9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+
+/* 선택된 수량 표시 */
+.selected-quantity {
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.complete-btn {
+    width: 100%; /* 버튼이 화면 전체 폭에 가까워지도록 */
+    max-width: 400px; /* 컨테이너의 너비에 맞추기 */
+    padding: 18px;
+    font-size: 18px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5em; /* 위 요소와 간격 */
+    position: fixed; /* 하단 고정 */
+    bottom: 100px; /* 화면 아래로부터의 거리 */
+    left: 50%;
+    transform: translateX(-50%); /* 버튼을 중앙 정렬 */
+    text-align: center;
+}
+
+.complete-btn:hover {
+    background-color: #555;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .quantity-btn {
+        font-size: 1.25em;
+        padding: 0.5em;
+    }
+
+    #quantityDisplay {
+        font-size: 1.1em;
+    }
+
+    .complete-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

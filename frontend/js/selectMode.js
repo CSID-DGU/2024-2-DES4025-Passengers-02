@@ -1,7 +1,7 @@
 document.getElementById('voice').addEventListener('click', function() {
     // 음성 주문 모드
     console.log("음성 주문 모드");
-    window.location.href = "voiceOrder.html";
+    window.location.href = "v_askTakeOut.html";
 });
 
 document.getElementById('touch').addEventListener('click', function() {
