@@ -1,43 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
     const categoryMap = {
         coffee: [
-            { name: '아메리카노', price: '2000원' },
-            { name: '카페라떼', price: '3000원' },
-            { name: '카푸치노', price: '3500원' },
-            { name: '카페라떼', price: '3200원' },
-            { name: '카페모카', price: '3500원' },
-            { name: '바닐라라떼', price: '3700원' },
-            { name: '연유라떼', price: '3800원' },
-            { name: '에스프레소', price: '2500원' }
+            { name: '아메리카노', price: 2000 },
+            { name: '카페라떼', price: 3000 },
+            { name: '카푸치노', price: 3500 },
+            { name: '카페모카', price: 3500 },
+            { name: '바닐라라떼', price: 3700 },
+            { name: '연유라떼', price: 3800 },
+            { name: '에스프레소', price: 2500 }
         ],
         tea: [
-            { name: '애플유자차', price: '3000원' },
-            { name: '캐모마일', price: '2800원' },
-            { name: '얼그레이', price: '2900원' },
-            { name: '자몽차', price: '3200원' },
-            { name: '레몬차', price: '2700원' },
-            { name: '녹차', price: '2500원' },
-            { name: '페퍼민트', price: '2800원' }
+            { name: '애플유자차', price: 3000 },
+            { name: '캐모마일', price: 2800 },
+            { name: '얼그레이', price: 2900 },
+            { name: '자몽차', price: 3200 },
+            { name: '레몬차', price: 2700 },
+            { name: '녹차', price: 2500 },
+            { name: '페퍼민트', price: 2800 }
         ],
         drink: [
-            { name: '골드망고스무디', price: '4000원' },
-            { name: '딸기주스', price: '3500원' },
-            { name: '녹차프라페', price: '4500원' },
-            { name: '라임모히또', price: '4200원' },
-            { name: '체리콕', price: '3000원' },
-            { name: '유니콘프라페', price: '5000원' },
-            { name: '민트프라페', price: '4300원' },
-            { name: '딸기퐁크러쉬', price: '4500원' }
+            { name: '골드망고스무디', price: 4000 },
+            { name: '딸기주스', price: 3500 },
+            { name: '녹차프라페', price: 4500 },
+            { name: '라임모히또', price: 4200 },
+            { name: '체리콕', price: 3000 },
+            { name: '유니콘프라페', price: 5000 },
+            { name: '민트프라페', price: 4300 },
+            { name: '딸기퐁크러쉬', price: 4500 }
         ],
         food: [
-            { name: '크로와상', price: '2500원' },
-            { name: '샌드위치', price: '5000원' },
-            { name: '머핀', price: '3000원' },
+            { name: '크로와상', price: 2500 },
+            { name: '샌드위치', price: 5000 },
+            { name: '머핀', price: 3000 }
         ],
         md: [
-            { name: '텀블러', price: '15000원' },
-            { name: '머그컵', price: '12000원' },
-            { name: '티셔츠', price: '20000원' },
+            { name: '텀블러', price: 15000 },
+            { name: '머그컵', price: 12000 },
+            { name: '티셔츠', price: 20000 }
         ],
     };
 
@@ -69,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Add click event to store selected menu
             menuItem.addEventListener('click', () => {
-                localStorage.setItem('selectedMenuItem', item.name);
+                localStorage.setItem('selectedMenuItem', item.name); // 메뉴 이름만 저장
+                localStorage.setItem('selectedMenuPrice', item.price); // 가격을 따로 저장
                 window.location.href = 'v_askTemperature.html'; // Next page
             });
 
