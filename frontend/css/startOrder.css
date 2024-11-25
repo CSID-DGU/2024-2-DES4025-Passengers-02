@@ -1,0 +1,76 @@
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 헤더 스타일 */
+h1 {
+    font-weight: 600;
+    font-size: 2.5em;
+    line-height: 1.2em;
+    color: #000000;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1.2em;
+    color: #333333;
+    margin-bottom: 2em;
+}
+
+/* 버튼 스타일 */
+.option {
+    width: 100%; /* 버튼이 화면 크기에 적응하도록 */
+    max-width: 400px; /* 최대 너비 */
+    padding: 15px 20px; /* 버튼 안쪽 여백 */
+    font-size: 18px; /* 텍스트 크기 */
+    font-weight: bold; /* 텍스트 굵게 */
+    color: #000000; /* 텍스트 색상 */
+    background-color: #FFFFFF;
+    border: 0.25em solid #D9D9D9;
+    border-radius: 8px; /* 둥근 모서리 */
+    cursor: pointer; /* 포인터 모양 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    transition: background-color 0.3s, transform 0.2s; /* 애니메이션 */
+}
+
+.option:hover {
+    background-color: #D9D9D9;
+    border-color: #D9D9D9;
+}
+
+.option:active {
+    background-color: #555555; /* 클릭 시 색상 변경 */
+    transform: scale(0.98); /* 약간 작아지는 효과 */
+}
+
+/* 반응형 스타일 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .option {
+        font-size: 16px;
+        padding: 12px 16px; /* 버튼 크기 축소 */
+   
+    }
+}

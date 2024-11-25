@@ -145,6 +145,10 @@ h2 {
     background-color: #333;
 }
 
+
+
+
+
 /* 반응형 스타일 */
 @media (max-width: 600px) {
     h1 {
