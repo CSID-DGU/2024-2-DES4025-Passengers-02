@@ -173,11 +173,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+
+
         // POST 요청 보내기
         const orderData = {
             orderDetail: JSON.stringify(orderDetail),  // 주문 상세 내용
             total_price: total_price                   // 총 가격
         };
+
+        console.log("주문하기 버튼 클릭", orderData);
+
 
         fetch(`http://211.188.49.69:8080/${orderNum}`, {  // 실제 백엔드 API URL로 변경 필요
             method: 'POST',
@@ -187,6 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(orderData)
         })
         .then(response => {
+            console.log("Response Status:", response.status);
+
             if (!response.ok) {
                 throw new Error('서버 요청에 실패했습니다.');
             }

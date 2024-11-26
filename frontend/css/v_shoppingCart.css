@@ -84,7 +84,7 @@ h1 {
     color: white;
     cursor: pointer;
     width: 100%; /* 버튼이 컨테이너 너비에 맞게 */
-    max-width: 400px; /* 최대 버튼 너비 */ 
+    max-width: 400px; /* 최대 버튼 너비 */
     transition: background-color 0.3s;
 }
 

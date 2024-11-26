@@ -39,26 +39,25 @@ h1 {
 }
 
 .option {
-    width: 100%;
-    padding: 3em;
-    font-size: 1.6em;
-    font-weight: bold;
+    padding: 25px;
+    font-size: 23px;
+    font-weight: 500;
     color: #000;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 8px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
 .option:hover {
-    background-color: #d9d9d9;
-    border-color: #999;
+    background-color: #e0e0e0;
+    border-color: #b3b3b3;
 }
 
 .option.selected {
     background-color: #d9d9d9;
-    border-color: #666;
+    border-color: #999999;
 }
 
 /* 반응형 스타일 */
