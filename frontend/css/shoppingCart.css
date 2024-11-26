@@ -79,17 +79,20 @@ body {
     margin-bottom: 10px;
 }
 
-.option-btn {
-    background-color: #f4a742;
-    border: none;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+
+.option-btn  {
     width: 100%;
-    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1em;
 }
+
 
 .quantity-wrapper {
     display: flex;
@@ -126,13 +129,10 @@ body {
     padding: 15px;
     font-size: 18px;
     color: white;
-    background-color: #f4a742;
+    background-color: black;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.order-btn:hover {
-    background-color: #e3952b;
+    margin-top: 1em;
 }

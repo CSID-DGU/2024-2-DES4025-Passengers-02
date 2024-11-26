@@ -33,7 +33,7 @@ const menuData = {
 };
 
 // 저장된 카테고리 불러오기
-const selectedCategory = localStorage.getItem('selectedCategory');
+const selectedCategory = localStorage.getItem('selectedCategory') || 'coffee';
 console.log("선택된 카테고리:", selectedCategory);
 
 // 선택된 카테고리에 해당하는 탭을 활성화

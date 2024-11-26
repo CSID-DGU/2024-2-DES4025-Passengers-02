@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // "키오스크로 주문 번호 전송하기" 버튼 클릭 이벤트
     document.querySelector('.order-more-btn').addEventListener('click', function() {
-        alert('키오스크로 주문 번호 전송이 준비되었습니다.');
-        // 실제 키오스크 전송 로직 추가 가능
+        localStorage.clear();
     });
 });
