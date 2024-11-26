@@ -19,44 +19,52 @@ document.addEventListener('DOMContentLoaded', function () {
         orderNumDisplay.textContent = "주문 번호를 불러올 수 없습니다.";
     }
 
-    // 서버에 주문 데이터 전송
-    function sendOrderData() {
-        const orderData = {
-            orderDetail: JSON.stringify(orderDetail),
-            total_price: total_price
-        };
-
-        fetch(`http://211.188.49.69:8080/${storedOrderNum}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(orderData)
-        })
+    // config.json에서 SERVER_URL 가져오기
+    fetch('../config.json')
         .then(response => response.json())
-        .then(data => {
-            if (data.code === "SU") {
-                console.log("주문 성공:", data);
-                localStorage.removeItem('cart'); // 장바구니 초기화
-            } else {
-                alert("주문 처리 중 오류가 발생했습니다.");
+        .then(config => {
+            const serverUrl = config.SERVER_URL; // SERVER_URL 가져오기
+            console.log("Loaded Server URL:", serverUrl);
+
+            // 서버에 주문 데이터 전송
+            function sendOrderData() {
+                const orderData = {
+                    orderDetail: JSON.stringify(orderDetail),
+                    total_price: total_price
+                };
+
+                fetch(`${serverUrl}/${storedOrderNum}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(orderData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.code === "SU") {
+                            console.log("주문 성공:", data);
+                            localStorage.removeItem('cart'); // 장바구니 초기화
+                        } else {
+                            alert("주문 처리 중 오류가 발생했습니다.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("에러 발생:", error);
+                        alert("주문 처리 중 오류가 발생했습니다.");
+                    });
             }
+
+            sendOrderData();
+
+            // 3초 후 안내 화면으로 이동
+            setTimeout(() => {
+                window.location.href = "gotokiosk.html";
+            }, 3000);
+
         })
-        .catch(error => {
-            console.error("에러 발생:", error);
-            alert("주문 처리 중 오류가 발생했습니다.");
+        .catch(err => {
+            console.error("Failed to load config:", err);
+            alert("환경 설정 로드에 실패했습니다. 다시 시도해주세요.");
         });
-    }
-
-    sendOrderData();
-
-    // 3초 후 안내 화면으로 이동
-    setTimeout(() => {
-        window.location.href = "gotokiosk.html";
-    }, 3000);
-
-    // "추가 주문하기" 버튼 클릭 이벤트
-    addMoreOrderBtn.addEventListener('click', function () {
-        window.location.href = "v_askCategory.html";
-    });
 });
