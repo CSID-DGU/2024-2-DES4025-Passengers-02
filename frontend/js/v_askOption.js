@@ -14,19 +14,32 @@ document.addEventListener('DOMContentLoaded', function () {
             // 선택된 옵션의 ID 가져오기
             const optionId = this.id;
 
-            if(optionId ==='none'){
+            if (optionId === 'none') {
+                // "선택 없음"을 선택하면 모든 선택 초기화
                 selectedOptions = [];
-            }
-
-
-            // 선택한 옵션이 이미 배열에 존재하면 제거, 그렇지 않으면 추가
-            else if (selectedOptions.includes(optionId) && optionId !='none') {
-                selectedOptions = selectedOptions.filter(opt => opt !== optionId);
-                this.classList.remove('selected');
-            } 
-            else {
-                selectedOptions.push(optionId);
+                document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
                 this.classList.add('selected');
+
+                // 로컬스토리지에 선택 없음 저장
+                localStorage.setItem('selectedOption', '선택 없음');
+            } else {
+                // "선택 없음"이 선택된 상태라면 초기화
+                const noneOption = document.getElementById('none');
+                if (noneOption) {
+                    noneOption.classList.remove('selected');
+                }
+
+                // 선택한 옵션이 이미 배열에 존재하면 제거, 그렇지 않으면 추가
+                if (selectedOptions.includes(optionId)) {
+                    selectedOptions = selectedOptions.filter(opt => opt !== optionId);
+                    this.classList.remove('selected');
+                } else {
+                    selectedOptions.push(optionId);
+                    this.classList.add('selected');
+                }
+
+                // 로컬스토리지에 마지막으로 선택한 옵션 저장
+                localStorage.setItem('selectedOption', selectedOptions[selectedOptions.length - 1] || '선택 없음');
             }
 
             console.log("선택된 옵션들:", selectedOptions);

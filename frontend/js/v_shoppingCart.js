@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const totalItemPrice = menuPrice * item.quantity; // 개별 항목 총액 계산
 
             const menuInfo = document.createElement('h3');
-            menuInfo.textContent = `${menuName} - ${totalItemPrice}원`;
+            menuInfo.textContent = `${menuName} ${item.quantity}잔 : ${totalItemPrice}원`;
 
             // 삭제 버튼
             const deleteBtn = document.createElement('button');

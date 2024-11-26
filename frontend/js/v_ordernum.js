@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sendOrderData();
 
+    // 3초 후 안내 화면으로 이동
+    setTimeout(() => {
+        window.location.href = "gotokiosk.html";
+    }, 3000);
+
     // "추가 주문하기" 버튼 클릭 이벤트
     addMoreOrderBtn.addEventListener('click', function () {
         window.location.href = "v_askCategory.html";

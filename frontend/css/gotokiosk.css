@@ -1,0 +1,64 @@
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.order-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+.order-number-box {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.order-label {
+    font-size: 16px;
+    color: #666;
+}
+
+.order-number-box p {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.instructions {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.order-more-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-more-btn:hover {
+    background-color: #555;
+}
