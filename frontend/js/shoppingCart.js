@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     total_price: total_price
                 };
 
-                fetch(`${serverUrl}/${orderNum}`, {
+                fetch(`/api/${orderNum}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

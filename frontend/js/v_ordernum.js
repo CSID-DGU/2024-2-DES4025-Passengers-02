@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     total_price: total_price
                 };
 
-                fetch(`${serverUrl}/${storedOrderNum}`, {
+                fetch(`/api/${storedOrderNum}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

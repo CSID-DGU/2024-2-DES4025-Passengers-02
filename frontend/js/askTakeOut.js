@@ -20,7 +20,7 @@ fetch('../config.json')
 
     // 서버에 takeoutMode 전송하는 함수
     function sendTakeoutMode(serverUrl, takeoutMode) {
-      fetch(`${serverUrl}/home`, {
+      fetch(`/api/home`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

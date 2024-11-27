@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
         // 서버에 takeoutMode 전송하는 함수
         function sendTakeoutMode(takeoutMode) {
-          fetch(`${serverUrl}/home`, { // 동적으로 로드된 serverUrl 사용
+          fetch(`/api/home`, { // 동적으로 로드된 serverUrl 사용
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
