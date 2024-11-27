@@ -1,36 +1,47 @@
 const menuData = {
     coffee: [
-        { name: '아메리카노', img: '../assets/images/menu/americano.png' },
-        { name: '큐브라떼', img: '../assets/images/menu/cubelatte.png' },
-        { name: '카푸치노', img: '../assets/images/menu/cappuchino.png' },
-        { name: '카페라떼', img: '../assets/images/menu/cafelatte.png' },
-        { name: '카페모카', img: '../assets/images/menu/cafemocha.png' },
-        { name: '바닐라라떼', img: '../assets/images/menu/vanillalatte.png' },
-        { name: '연유라떼', img: '../assets/images/menu/condensedmilklatte.png' },
-        { name: '에스프레소', img: '../assets/images/menu/expresso.png' }
+        { name: '아메리카노', img: '../assets/images/menu/americano.png', price: 2000 },
+        { name: '큐브라떼', img: '../assets/images/menu/cubelatte.png', price: 2900 }, 
+        { name: '카푸치노', img: '../assets/images/menu/cappuchino.png', price: 3500 },
+        { name: '카페라떼', img: '../assets/images/menu/cafelatte.png', price: 3000 },
+        { name: '카페모카', img: '../assets/images/menu/cafemocha.png', price: 3500 },
+        { name: '바닐라라떼', img: '../assets/images/menu/vanillalatte.png', price: 3700 },
+        { name: '연유라떼', img: '../assets/images/menu/condensedmilklatte.png', price: 3800 },
+        { name: '에스프레소', img: '../assets/images/menu/expresso.png', price: 2500 }
     ],
     tea: [
-        { name: '애플유자차', img: '../assets/images/menu/appleyuzutea.png' },
-        { name: '캐모마일', img: '../assets/images/menu/Chamomile.png' },
-        { name: '얼그레이', img: '../assets/images/menu/earlgreytea.png' },
-        { name: '자몽차', img: '../assets/images/menu/grapefruittea.png' },
-        { name: '레몬차', img: '../assets/images/menu/lemontea.png' },
-        { name: '녹차', img: '../assets/images/menu/greentea.png' },
-        { name: '페퍼민트', img: '../assets/images/menu/peppermint.png' }
+        { name: '애플유자차', img: '../assets/images/menu/appleyuzutea.png', price: 3000 },
+        { name: '캐모마일', img: '../assets/images/menu/Chamomile.png', price: 2800 },
+        { name: '얼그레이', img: '../assets/images/menu/earlgreytea.png', price: 2900 },
+        { name: '자몽차', img: '../assets/images/menu/grapefruittea.png', price: 3200 },
+        { name: '레몬차', img: '../assets/images/menu/lemontea.png', price: 2700 },
+        { name: '녹차', img: '../assets/images/menu/greentea.png', price: 2500 },
+        { name: '페퍼민트', img: '../assets/images/menu/peppermint.png', price: 2800 }
     ],
     drink: [
-        { name: '골드망고스무디', img: '../assets/images/menu/mangosmoothie.png' },
-        { name: '딸기주스', img: '../assets/images/menu/strawberryjuice.png' },
-        { name: '녹차프라페', img: '../assets/images/menu/greenteafrappe.png' },
-        { name: '라임모히또', img: '../assets/images/menu/limemojitto.png' },
-        { name: '체리콕', img: '../assets/images/menu/cherrycoke.png' },
-        { name: '유니콘프라페', img: '../assets/images/menu/unicornfrappe.png' },
-        { name: '민트프라페', img: '../assets/images/menu/mintfrappe.png' },
-        { name: '딸기퐁크러쉬', img: '../assets/images/menu/strawberrycrush.png' }
+        { name: '골드망고스무디', img: '../assets/images/menu/mangosmoothie.png', price: 4000 },
+        { name: '딸기주스', img: '../assets/images/menu/strawberryjuice.png', price: 3500 },
+        { name: '녹차프라페', img: '../assets/images/menu/greenteafrappe.png', price: 4500 },
+        { name: '라임모히또', img: '../assets/images/menu/limemojitto.png', price: 4200 },
+        { name: '체리콕', img: '../assets/images/menu/cherrycoke.png', price: 3000 },
+        { name: '유니콘프라페', img: '../assets/images/menu/unicornfrappe.png', price: 5000 },
+        { name: '민트프라페', img: '../assets/images/menu/mintfrappe.png', price: 4300 },
+        { name: '딸기퐁크러쉬', img: '../assets/images/menu/strawberrycrush.png', price: 4500 }
     ],
-    food: [],
-    md: []
+    food: [
+        { name: '크로와상', img: '../assets/images/menu/croissant.png', price: 2500 },
+        { name: '샌드위치', img: '../assets/images/menu/sandwich.png', price: 5000 },
+        { name: '머핀', img: '../assets/images/menu/muffin.png', price: 3000 }
+    ],
+    md: [
+        { name: '텀블러', img: '../assets/images/menu/tumbler.png', price: 15000 },
+        { name: '머그컵', img: '../assets/images/menu/mugcup.png', price: 12000 },
+        { name: '티셔츠', img: '../assets/images/menu/tshirt.png', price: 20000 }
+    ]
 };
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

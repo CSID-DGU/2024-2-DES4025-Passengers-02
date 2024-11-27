@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const priceMap = {
         '아메리카노': 2000,
         '카페라떼': 3000,
+        '큐브라떼' : 2900,
         '카푸치노': 3500,
         '카페모카': 3500,
         '바닐라라떼': 3700,
