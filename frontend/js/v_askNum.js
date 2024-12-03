@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     increaseBtn.addEventListener('click', function () {
         quantity++;
-        quantityDisplay.textContent = `${quantity}개`;
+        quantityDisplay.textContent = `선택된 수량은 ${quantity}개 입니다.`;
     });
 
     decreaseBtn.addEventListener('click', function () {

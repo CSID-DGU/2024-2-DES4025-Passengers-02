@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.focus(); // 주요 콘텐츠로 초점 이동
+    }
+
     let selectedOption = null;
 
     // 각 옵션 버튼에 클릭 이벤트 추가

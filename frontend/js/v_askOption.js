@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.focus(); // 주요 콘텐츠로 초점 이동
+    }
+    
     // 로컬스토리지에서 선택된 메뉴와 온도를 가져오기
     const selectedMenu = localStorage.getItem('selectedMenuItem');
     const selectedTemperature = localStorage.getItem('selectedTemperature');

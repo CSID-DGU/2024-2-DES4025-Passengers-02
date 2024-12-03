@@ -7,11 +7,22 @@
     <link rel="stylesheet" href="/css/startOrder.css">
 </head>
 <body>
-    <h1>주문 시작</h1>
-    <p>안녕하세요, 메뉴 주문 시작 페이지 입니다.</p>
-    <a href="/pages/selectMode.html">
-        <button class="option" >매뉴 주문하러 가기</button>
-    </a>
+    <div id="main-content" role="main" tabindex="-1">
+        <h1>주문 시작</h1>
+        <p>안녕하세요, 메뉴 주문 시작 페이지 입니다.</p>
+        <button class="option" onclick="location.href='/pages/selectMode.html'">
+            메뉴 주문하러 가기
+        </button>
+    </div>
     
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            mainContent.focus(); 
+        }
+    });
+</script>
