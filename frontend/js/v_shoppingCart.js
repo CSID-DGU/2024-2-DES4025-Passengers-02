@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 주문 데이터를 생성
         const orderDetail = cart.map(item => {
             const menuName = item.menu.name || item.menu; // 메뉴 이름 가져오기
-            const menuPrice = item.menu.price || priceMap[menuName] || 0; // 메뉴 가격 가져오기
+            const menuPrice = item.menu.price || priceMap[menuName] || 0; // 메뉴 가격 가져오기 점 이동 추가초
             return {
                 name: menuName,
                 quantity: item.quantity,
