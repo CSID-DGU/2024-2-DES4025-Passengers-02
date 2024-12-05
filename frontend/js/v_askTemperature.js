@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     let selectedTemperature = null;
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-        mainContent.focus(); // 주요 콘텐츠로 초점 이동
-    }
 
     // 각 옵션 버튼에 클릭 이벤트 추가
     document.querySelectorAll('.option').forEach(button => {

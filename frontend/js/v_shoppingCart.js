@@ -4,11 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const addMoreMenuBtn = document.getElementById('addMoreMenu');
     const placeOrderBtn = document.getElementById('placeOrder');
 
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-        mainContent.focus(); // 주요 콘텐츠로 초점 이동
-    }
-
     // 메뉴 가격 정보
     const priceMap = {
         '아메리카노': 2000,

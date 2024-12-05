@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     decreaseBtn.addEventListener('click', function () {
         if (quantity > 1) {
             quantity--;
-            quantityDisplay.textContent = `${quantity}개`;
+            quantityDisplay.textContent = `선택된 수량은 ${quantity}개 입니다.`;
         }
     });
 

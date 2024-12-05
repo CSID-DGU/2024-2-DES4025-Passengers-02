@@ -39,12 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: '티셔츠', price: 20000 }
         ],
     };
-
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-        mainContent.focus(); // 주요 콘텐츠로 초점 이동
-    }
-
+    
     const urlParams = new URLSearchParams(window.location.search);
     const selectedCategoryFromURL = urlParams.get('category');
     const selectedCategoryFromStorage = localStorage.getItem('selectedCategory');

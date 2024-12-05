@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     let selectedOption = null;
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-        mainContent.focus(); // 주요 콘텐츠로 초점 이동
-    }
   
     // config.json에서 서버 URL 로드
     fetch('../config.json')
