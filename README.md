@@ -17,7 +17,7 @@
 
 <br>
 
-  **Voisk 배포 URL** : 
+  **Voisk 배포 URL** : https://voisk.netlify.app
 
 <br><br>
 
